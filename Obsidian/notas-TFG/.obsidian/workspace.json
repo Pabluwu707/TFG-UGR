@@ -1,0 +1,170 @@
+{
+  "main": {
+    "id": "09d96f0ab05d64b2",
+    "type": "split",
+    "children": [
+      {
+        "id": "885e0550228f7344",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "49b9b48a178a9b59",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Calendario - Temporización del proyecto.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "14ff916218dcc2a3",
+    "type": "split",
+    "children": [
+      {
+        "id": "98badd4009a2185d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b17a8d22f50fe1ed",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ddbcdff2716e605d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "d15e6ee84cb6d005",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 231.5
+  },
+  "right": {
+    "id": "80eb6ffc6f84dbc5",
+    "type": "split",
+    "children": [
+      {
+        "id": "343420d434c0b6fe",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "69d42b5e952f618b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Calendario - Temporización del proyecto.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ff08dcced23af41c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Calendario - Temporización del proyecto.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a0f90fb38f8be8bd",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "dcd1d6c71457f185",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Calendario - Temporización del proyecto.md"
+              }
+            }
+          },
+          {
+            "id": "c2e2ea95d3962b2f",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir quick switcher": false,
+      "graph:Abrir vista de gráfico": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "canvas:Create new canvas": false
+    }
+  },
+  "active": "49b9b48a178a9b59",
+  "lastOpenFiles": [
+    "Dudas para tutor.md",
+    "Enlaces para documentación y herramientas.md",
+    "Ideas y conceptos.md",
+    "Tareas a realizar.md",
+    "Calendario - Temporización del proyecto.md",
+    "Untitled.canvas",
+    "30-03-2023.md",
+    "2023-03-30.md",
+    "^.md"
+  ]
+}
