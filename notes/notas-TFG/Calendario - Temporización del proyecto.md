@@ -1,5 +1,4 @@
 -----
-
 |       |       |       |       |       |       |       |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Mes:** | Febrero 2023 |       |       |       |       |       |
@@ -32,7 +31,7 @@
 | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
 |       |       |       |       |       |   1   |   2   |
 |   3   |   4   |   5   |   6   |   7   |   8   |   9   |
-|  [[#10 de abril\|10]]   |  11   |  12   |  13   |  14   |  15   |  16   |
+|  [[#10 de abril\|10]]   |  11   |  12   |  13   |  [[#14 de abril\|14]]   |  15   |  16   |
 |  17   |  18   |  19   |  20   |  21   |  22   |  23   |
 |  24   |  25   |  26   |  27   |  28   |  29   |  30   |
 
@@ -94,5 +93,10 @@ indigo_ccd_simulator [other drivers]
 ## 10 de abril
 
 18:30 - 21:00
-- Continuar repaso de Docker
-- Instalación de clientes INDI/INDIGO: 
+- Setup del repositorio de GitHub
+
+
+## 14 de abril
+
+18:30 - 21:00
+- Descargar plantilla de Latex de JJ

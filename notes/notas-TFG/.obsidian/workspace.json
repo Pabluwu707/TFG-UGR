@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Calendario - Temporización del proyecto.md",
-                "mode": "source",
+                "file": "Dudas para tutor.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Calendario - Temporización del proyecto.md",
+                "file": "Dudas para tutor.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Calendario - Temporización del proyecto.md",
+                "file": "Dudas para tutor.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Calendario - Temporización del proyecto.md"
+                "file": "Dudas para tutor.md"
               }
             }
           },
@@ -157,10 +157,10 @@
   },
   "active": "49b9b48a178a9b59",
   "lastOpenFiles": [
-    "Dudas para tutor.md",
-    "Enlaces para documentación y herramientas.md",
-    "Ideas y conceptos.md",
     "Tareas a realizar.md",
+    "Enlaces.md",
+    "Ideas y conceptos.md",
+    "Dudas para tutor.md",
     "Calendario - Temporización del proyecto.md",
     "Untitled.canvas",
     "30-03-2023.md",
