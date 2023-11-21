@@ -4,22 +4,59 @@
     "type": "split",
     "children": [
       {
-        "id": "885e0550228f7344",
+        "id": "730fd3500183dd22",
         "type": "tabs",
         "children": [
           {
-            "id": "49b9b48a178a9b59",
+            "id": "c193ed14185dc7cd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dudas para tutor.md",
-                "mode": "preview",
+                "file": "Tareas a realizar.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "16e5e562a3073f7b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Apuntes en sucio.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "dd9582c84d0ad81a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Enlaces.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d9602f4f824b3455",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Historia de usuario.md",
+                "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -64,12 +101,20 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "29e7f0771f267b13",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 231.5
+    "width": 200
   },
   "right": {
     "id": "80eb6ffc6f84dbc5",
@@ -85,14 +130,14 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dudas para tutor.md",
+                "file": "Apuntes en sucio.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               }
             }
           },
@@ -102,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Dudas para tutor.md",
+                "file": "Apuntes en sucio.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,16 +170,26 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Dudas para tutor.md"
+                "file": "Apuntes en sucio.md"
               }
             }
           },
           {
-            "id": "c2e2ea95d3962b2f",
+            "id": "6ba53276649417bf",
             "type": "leaf",
             "state": {
               "type": "calendar",
               "state": {}
+            }
+          },
+          {
+            "id": "022fe9adff060377",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency"
+              }
             }
           }
         ],
@@ -147,20 +202,24 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Abrir quick switcher": false,
-      "graph:Abrir vista de gráfico": false,
-      "daily-notes:Abrir la nota de hoy": false,
-      "templates:Insertar plantilla": false,
-      "command-palette:Abrir paleta de comandos": false,
-      "canvas:Create new canvas": false
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "canvas:Create new canvas": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "49b9b48a178a9b59",
+  "active": "16e5e562a3073f7b",
   "lastOpenFiles": [
     "Tareas a realizar.md",
-    "Enlaces.md",
+    "Apuntes en sucio.md",
     "Ideas y conceptos.md",
+    "Historia de usuario.md",
+    "Enlaces.md",
     "Dudas para tutor.md",
+    "Pasted image 20230719201922.png",
     "Calendario - Temporización del proyecto.md",
     "Untitled.canvas",
     "30-03-2023.md",

@@ -5,17 +5,18 @@
 Página oficial de INDI
 https://indilib.org/
 
+EL PAPER - "INDI: Instrument-Neutral Distributed Interface"
+http://www.clearskyinstitute.com/INDI/INDI.pdf
+KStars: Desktop Planetarium. Cliente para conectar con Indigo Server y realizar pruebas. INCLUYE EKOS
+https://kstars.kde.org/es/
+https://archlinux.org/packages/community/x86_64/kstars/
+
+
 INDIGO Astronomy (Usuario GitHub). Proyecto rama de INDI que busca suplir muchas de sus carencias, el más popular de las alternativas a INDI y el recomendado por el tutor.
 https://github.com/indigo-astronomy
 
 INDIGO - Proyecto en GitHub
 https://github.com/indigo-astronomy/indigo
-
-EL PAPER - "INDI: Instrument-Neutral Distributed Interface"
-http://www.clearskyinstitute.com/INDI/INDI.pdf
-
-KStars: Desktop Planetarium. Cliente para conectar con Indigo Server y realizar pruebas. INCLUYE EKOS
-https://archlinux.org/packages/community/x86_64/kstars/
 
 INDIGO-control-panel: Panel de control, cliente para conectarse a INDIGO Servidor. Está en GitHub, pero no viene compilado. Habría que ver que hacer con eso. Tiene paquete para apt-get.
 
@@ -49,3 +50,11 @@ https://zbib.org/ - Genera bibliografía en bibtex de cualquier enlace
 
 ## Latex
 https://gitlab.com/Groctel/aqademia/-/releases - Plantilla de Latex para papers académicos.
+
+
+-----
+
+
+
+[https://www.typescriptlang.org/docs/handbook/2/everyday-types.html](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html")
+[https://www.typescriptlang.org/docs/handbook/2/narrowing.html](https://www.typescriptlang.org/docs/handbook/2/narrowing.html "https://www.typescriptlang.org/docs/handbook/2/narrowing.html")[https://www.typescriptlang.org/docs/handbook/2/types-from-types.html](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html")
