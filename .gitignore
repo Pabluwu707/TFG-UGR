@@ -309,3 +309,8 @@ typings/
 # emacs
 *~
 
+#Obsidian files
+./obsidian/*
+
+#Build folder
+dist/
