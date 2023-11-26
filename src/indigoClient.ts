@@ -1,3 +1,5 @@
+import { State, Permission, property, textProperty, switchProperty, numberProperty } from "./property.js";
+
 class indigoClient {
   public port: number;
   public host: string;
@@ -113,6 +115,7 @@ class indigoClient {
   }
 }
 
+export { indigoClient };
 
 // ----- EJECUCIÓN DE PRUEBA
 /*

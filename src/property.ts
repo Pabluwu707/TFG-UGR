@@ -1,3 +1,5 @@
+import { propertyItem, propertyItemNumber } from "./propertyItem.js";
+
 enum State {
   Idle,
   Ok,
@@ -109,16 +111,4 @@ class numberProperty extends property {
   }
 }
 
-type property2 = {
-  name: string;
-  label: string;
-
-  group: string;
-  device: string;
-  version: number;
-
-  state: State;
-  perm: Permission;
-
-  items: propertyItem2[];
-}
+export { State, Permission, property, textProperty, switchProperty, numberProperty };
