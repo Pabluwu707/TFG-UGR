@@ -1,3 +1,4 @@
+import { json } from "stream/consumers";
 import { propertyItem, propertyItemNumber } from "./propertyItem.js";
 
 enum State {
@@ -25,18 +26,16 @@ class property {
   private perm: Permission;
 
   
-  constructor(name: string, label: string, 
-              group: string, device: string, version: number, 
-              state: State, permission: Permission) {
-    this._name = name;
-    this._label = label;
+  constructor(jsonObject: any) {
+    this._name = jsonObject.name;
+    this._label = jsonObject.label;
 
-    this.group = group;
-    this.device = device;
-    this.version = version;
+    this.group = jsonObject.group;
+    this.device = jsonObject.device;
+    this.version = jsonObject.version;
 
-    this.state = state;
-    this.perm = permission;
+    this.state = jsonObject.state;
+    this.perm = jsonObject.permission;
   }
 
   // Readonly getters
@@ -73,11 +72,11 @@ class textProperty extends property {
   private items: propertyItem[] = [];
 
   constructor(jsonObject : any) {
-    super(jsonObject.name, jsonObject.label, 
-          jsonObject.group, jsonObject.device, 
-          jsonObject.version, jsonObject.state, 
-          jsonObject.perm);
-    //TODO: Parsear propertyItems
+    super(jsonObject);
+
+    jsonObject.items.forEach((singularPropertyItem) => 
+      this.items.push(new propertyItem(singularPropertyItem))
+    );
   }
 }
 
@@ -87,12 +86,12 @@ class switchProperty extends property {
   private items: propertyItem[] = [];
 
   constructor(jsonObject : any) {
-    super(jsonObject.name, jsonObject.label, 
-          jsonObject.group, jsonObject.device, 
-          jsonObject.version, jsonObject.state, 
-          jsonObject.perm);
+    super(jsonObject);
     this.rule = jsonObject.rule;
-    //TODO: Parsear propertyItems
+
+    jsonObject.items.forEach((singularPropertyItem) => 
+      this.items.push(new propertyItem(singularPropertyItem))
+    );
     
   }
 }
@@ -102,11 +101,11 @@ class numberProperty extends property {
   private items: propertyItemNumber[] = [];
 
   constructor(jsonObject : any) {
-    super(jsonObject.name, jsonObject.label, 
-          jsonObject.group, jsonObject.device, 
-          jsonObject.version, jsonObject.state, 
-          jsonObject.perm);
-    //TODO: Parsear propertyItemNumbers
+    super(jsonObject);
+    
+    jsonObject.items.forEach((singularPropertyItem) => 
+      this.items.push(new propertyItemNumber(singularPropertyItem))
+    );
     
   }
 }

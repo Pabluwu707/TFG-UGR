@@ -3,10 +3,10 @@ class propertyItem {
   readonly _label: string;
   private value: any;
 
-  constructor(name: string, label: string, value = null) {
-    this._name = name;
-    this._label = label;
-    this.value = value;
+  constructor(jsonObject: any) {
+    this._name = jsonObject.name;
+    this._label = jsonObject.label;
+    this.value = jsonObject.value;
   }
 
   // Readonly getters
@@ -35,15 +35,13 @@ class propertyItemNumber extends propertyItem {
   private format : string;
   private target : number;
 
-  constructor(name: string, label: string, value = null,
-              min: number, max: number, step: number,
-              format: string, target: number) {
-    super(name, label, value);
-    this.min = min;
-    this.max = max;
-    this.step = step;
-    this.format = format;
-    this.target = target;
+  constructor(jsonObject: any) {
+    super(jsonObject);
+    this.min = jsonObject.min;
+    this.max = jsonObject.max;
+    this.step = jsonObject.step;
+    this.format = jsonObject.format;
+    this.target = jsonObject.target;
   }
 }
 
