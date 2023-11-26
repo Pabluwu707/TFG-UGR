@@ -41,17 +41,8 @@
     }
   </style>
 
-  <script src="dist/indigoClient.js"></script>
-  <script>
-        
-    const myHost = '127.0.0.1';
-    const myPort = 7624;
+  <script type="module" src="dist/index.js"></script>
 
-    console.log('PRUEBA DE CONEXIÓN');
-    var socketPrueba = new indigoClient(myHost, myPort);
-    socketPrueba.connect();
-
-  </script>
 </head>
 <body>
 
@@ -63,14 +54,14 @@
     <p>Una página de prueba donde ejecutar la biblioteca. Abre la consola para ver los resultados de la ejecución.</p><br>
     
     <h2>Envia un mensaje al servidor.</h2>
-    <input type="text" id="message" name="message" value=" ('{ &quot;getProperties&quot;: { &quot;version&quot;: 512, &quot;client&quot;: &quot;My Client&quot; } }') ">
-    <button type="button" onclick=" socketPrueba.send(message.value) ">Send message</button>
+    <input type="text" id="messageBox" name="messageBox" value=" ('{ &quot;getProperties&quot;: { &quot;version&quot;: 512, &quot;client&quot;: &quot;My Client&quot; } }') ">
+    <button type="button" id="buttonSendMessage">Send message</button>
     
     <hr>
     <br>
 
     <h2>Ver propiedades almacenadas.</h2>
-    <button type="button" onclick=" socketPrueba.printIndigoData() ">Print on console</button>
+    <button type="button" id="buttonPrintProperties">Print on console</button>
   
   </div>
 

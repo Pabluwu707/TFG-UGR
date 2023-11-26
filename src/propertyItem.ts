@@ -47,8 +47,4 @@ class propertyItemNumber extends propertyItem {
   }
 }
 
-type propertyItem2 = {
-  name: string;
-  label: string;
-  value: any;
-}
+export { propertyItem, propertyItemNumber };
