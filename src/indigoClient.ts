@@ -1,4 +1,5 @@
 import { State, Permission, property, textProperty, switchProperty, numberProperty } from "./property.js";
+import { propertyItem } from "./propertyItem.js";
 
 class indigoClient {
   public port: number;
@@ -38,8 +39,8 @@ class indigoClient {
         const obj = jsondata[topLevelKey];
         const objName : string = obj["name"];
 
-        const search = this.indigoData.find((element) => element.name == objName);
-        let found = (search != undefined);
+        const searchIndex = this.indigoData.findIndex((element) => element.name == objName);
+        let found = (searchIndex != -1);
 
         if (!found) {
           //Ha llegado una nueva Property, introducir en la variable indigoData
@@ -47,8 +48,8 @@ class indigoClient {
 
         } else {
           // Actualizar los datos de la Property anteriormente introducida en indigoData
-          // TO-DO
-
+          console.log("Propiedad repetida, actualizando datos");
+          this.updateExistingProperty(obj, topLevelKey, searchIndex);
         }
       }
     });
@@ -86,8 +87,58 @@ class indigoClient {
         this.indigoData.push( new numberProperty(propertyData) );
         break;
       default:
-        console.log("TO-DO");
+        console.log("Unexpected type of property.");
         break;
+    }
+  }
+
+  updateExistingProperty(propertyData : any, propertyType : string, propertyIndex : number): void {
+    switch(propertyType) {
+      case "defTextVector":
+        // Reemplazar los datos anteirores por un nuevo textProperty
+        this.indigoData[propertyIndex] = new textProperty(propertyData) ;
+        break;
+      case "defSwitchVector":
+        // Reemplazar los datos anteirores por un nuevo switchProperty
+        this.indigoData[propertyIndex] =  new switchProperty(propertyData) ;
+        break;
+      case "defNumberVector":
+        // Reemplazar los datos anteirores por un nuevo numberProperty
+        this.indigoData[propertyIndex] =  new numberProperty(propertyData) ;
+        break;
+      default:
+        console.log("Unexpected type of property.");
+        break;
+    }
+  }
+
+  getAllPropertiesFromServer(version: number = 512, device?: string, propertyName?: string): void {
+    let result = "";
+    
+    let messageDevice = "";
+    let messagePropertyName = "";
+
+    if (device != undefined) {
+      messageDevice = ", &quot;device&quot;: &quot;" + device + "&quot; ";
+    }
+    if (propertyName != undefined) {
+      messagePropertyName = ", &quot;name&quot;: &quot;" + propertyName + "&quot; ";
+    }
+
+    let messageData = " ('{ &quot;getProperties&quot;: { &quot;version&quot;: 512" + messageDevice + messagePropertyName + "} }') ";
+    
+    this.send(messageData);
+  }
+
+  updateRegisteredProperty(name: string, key: string, newValue: string): void {
+    const searchIndex = this.indigoData.findIndex((element) => element.name == name);
+    const found = (searchIndex != -1);
+
+    if (found && this.indigoData[searchIndex].hasOwnProperty(key)) {
+      this.indigoData[searchIndex][key] = newValue;
+      console.log("Variable " + key + " updated to new value: " + newValue);
+    } else {
+      console.log("Unable to update the Property.");
     }
   }
 
@@ -96,10 +147,10 @@ class indigoClient {
   printFullPropertyForDebug(jsondata : object) : void {
 
       for (const topLevelKey in jsondata) {
-        console.log(topLevelKey);
+        console.log("Property tipe: " + topLevelKey);
         const obj = jsondata[topLevelKey];
         const objName = obj["name"];
-        console.log("This object's name is " + objName);
+        console.log("This object's name is " + objName + "\nKeys of the object:");
 
         const keys = Object.keys(obj);
 
