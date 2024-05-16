@@ -52,6 +52,9 @@ https://zbib.org/ - Genera bibliografía en bibtex de cualquier enlace
 https://gitlab.com/Groctel/aqademia/-/releases - Plantilla de Latex para papers académicos.
 
 
+## Guia de estilo de TypeScript
+https://google.github.io/styleguide/tsguide.html#file-encoding-utf-8 - Google TypeScript Style Guide
+
 -----
 
 

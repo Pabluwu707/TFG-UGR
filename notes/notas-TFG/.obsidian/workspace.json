@@ -54,9 +54,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "d7add3e73e371217",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Enlaces.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -130,7 +142,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Apuntes en sucio.md",
+                "file": "Enlaces.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +159,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Apuntes en sucio.md",
+                "file": "Enlaces.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +182,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Apuntes en sucio.md"
+                "file": "Enlaces.md"
               }
             }
           },
@@ -188,7 +200,9 @@
             "state": {
               "type": "all-properties",
               "state": {
-                "sortOrder": "frequency"
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
               }
             }
           }
@@ -211,16 +225,16 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "16e5e562a3073f7b",
+  "active": "d7add3e73e371217",
   "lastOpenFiles": [
-    "Tareas a realizar.md",
-    "Apuntes en sucio.md",
     "Ideas y conceptos.md",
-    "Historia de usuario.md",
     "Enlaces.md",
-    "Dudas para tutor.md",
+    "Tareas a realizar.md",
     "Pasted image 20230719201922.png",
+    "Apuntes en sucio.md",
     "Calendario - Temporización del proyecto.md",
+    "Dudas para tutor.md",
+    "Historia de usuario.md",
     "Untitled.canvas",
     "30-03-2023.md",
     "2023-03-30.md",

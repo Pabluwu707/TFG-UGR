@@ -268,5 +268,24 @@ Especial énfasis en la barra baja.
 
 -----
 
-# Memoria
+# Funcionamiento del cliente Indigoscript
+```
+Client Processing (en pseudocódigo)
+
+if receive <setXXX> from Device
+	change record of value and/or state for the specified Property
+if receive <defProperty> from Device
+	if first time to see this device=
+		create new Device record
+	if first time to see this device+name combination
+		create new Property record within given Device
+
+if receive <delProperty> from Device
+	if includes device= attribute
+		if includes name= attribute
+			delete record for just the given Device+name
+```
+
+
+
 

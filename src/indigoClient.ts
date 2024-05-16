@@ -1,3 +1,4 @@
+import { device } from "./device.js";
 import { State, Permission, property, textProperty, switchProperty, numberProperty } from "./property.js";
 import { propertyItem } from "./propertyItem.js";
 
@@ -7,6 +8,7 @@ class indigoClient {
   public socket: WebSocket | null;
 
   public indigoData: property[] = [];
+  public indigoDevices: device[] = [];
 
   constructor(host: string, port: number) {
     this.host = host;
@@ -31,27 +33,10 @@ class indigoClient {
       console.log("[%s:%s] Message from server: %s", hora, minutos, event.data);
       */
       console.log(event.data);
+      //this.printFullPropertyForDebug(jsondata);
 
-      this.printFullPropertyForDebug(jsondata);
-
-      for (const topLevelKey in jsondata) {
-
-        const obj = jsondata[topLevelKey];
-        const objName : string = obj["name"];
-
-        const searchIndex = this.indigoData.findIndex((element) => element.name == objName);
-        let found = (searchIndex != -1);
-
-        if (!found) {
-          //Ha llegado una nueva Property, introducir en la variable indigoData
-          this.insertNewProperty(obj, topLevelKey);
-
-        } else {
-          // Actualizar los datos de la Property anteriormente introducida en indigoData
-          console.log("Propiedad repetida, actualizando datos");
-          this.updateExistingProperty(obj, topLevelKey, searchIndex);
-        }
-      }
+      this.handleIncomingProperties(jsondata)
+      
     });
   }
 
@@ -71,47 +56,29 @@ class indigoClient {
     }
   }
 
+  handleIncomingProperties(incomingJsonData: any) {
+    for (const topLevelKey in incomingJsonData) {
 
-  insertNewProperty(propertyData : any, propertyType : string): void {
-    switch(propertyType) {
-      case "defTextVector":
-        // Llamar al constructor de textProperty
-        this.indigoData.push( new textProperty(propertyData) );
-        break;
-      case "defSwitchVector":
-        // Llamar al constructor de switchProperty
-        this.indigoData.push( new switchProperty(propertyData) );
-        break;
-      case "defNumberVector":
-        // Llamar al constructor de numberProperty
-        this.indigoData.push( new numberProperty(propertyData) );
-        break;
-      default:
-        console.log("Unexpected type of property.");
-        break;
+      const obj = incomingJsonData[topLevelKey];
+      const objDeviceName : string = obj["device"];
+
+      const searchIndex = this.indigoDevices.findIndex((element) => element.device_name === objDeviceName);
+      const found = (searchIndex !== -1);
+      if (!found) {
+        // Ha llegado un nuevo Device, introducir en la variable indigoDevices
+        this.indigoDevices.push( new device(objDeviceName) );
+
+        // Una vez registrado el nuevo dispositivo, añadir la propiedad en este
+        this.indigoDevices[this.indigoDevices.length-1].handleIncomingProperty(obj, topLevelKey);
+
+      } else {
+        // Dispositivo ya registrado, añadir o actualizar la propiedad en este
+        this.indigoDevices[searchIndex].handleIncomingProperty(obj, topLevelKey);
+
+      }
     }
   }
-
-  updateExistingProperty(propertyData : any, propertyType : string, propertyIndex : number): void {
-    switch(propertyType) {
-      case "defTextVector":
-        // Reemplazar los datos anteirores por un nuevo textProperty
-        this.indigoData[propertyIndex] = new textProperty(propertyData) ;
-        break;
-      case "defSwitchVector":
-        // Reemplazar los datos anteirores por un nuevo switchProperty
-        this.indigoData[propertyIndex] =  new switchProperty(propertyData) ;
-        break;
-      case "defNumberVector":
-        // Reemplazar los datos anteirores por un nuevo numberProperty
-        this.indigoData[propertyIndex] =  new numberProperty(propertyData) ;
-        break;
-      default:
-        console.log("Unexpected type of property.");
-        break;
-    }
-  }
-
+  
   getAllPropertiesFromServer(version: number = 512, device?: string, propertyName?: string): void {
     let result = "";
     
@@ -131,7 +98,7 @@ class indigoClient {
   }
 
   updateRegisteredProperty(name: string, key: string, newValue: string): void {
-    const searchIndex = this.indigoData.findIndex((element) => element.name == name);
+    const searchIndex = this.indigoData.findIndex((element) => element.name === name);
     const found = (searchIndex != -1);
 
     if (found && this.indigoData[searchIndex].hasOwnProperty(key)) {
@@ -161,12 +128,14 @@ class indigoClient {
       }
   }
 
-  printIndigoData() : void {
-    console.log(this.indigoData);
+  printIndigoData() : device[] {
+    console.log(this.indigoDevices);
+    return this.indigoDevices;
   }
 }
 
 export { indigoClient };
+
 
 // ----- EJECUCIÓN DE PRUEBA
 /*
