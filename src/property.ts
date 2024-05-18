@@ -57,12 +57,12 @@ class property {
     this.group = newGroup;
   }
 
-  getDevice(): any {
-    return this.device;
+  getState(): any {
+    return this.state;
   }
 
-  setDevice(newDevice: any): void {
-    this.device = newDevice;
+  setState(newState: State): void {
+    this.state = newState;
   }
 }
 

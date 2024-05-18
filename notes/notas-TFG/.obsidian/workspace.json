@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Enlaces.md",
+                "file": "Apuntes en sucio.md",
                 "mode": "source",
                 "source": false
               }
@@ -142,7 +142,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Enlaces.md",
+                "file": "Apuntes en sucio.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -159,7 +159,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Enlaces.md",
+                "file": "Apuntes en sucio.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -182,7 +182,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Enlaces.md"
+                "file": "Apuntes en sucio.md"
               }
             }
           },
@@ -227,8 +227,8 @@
   },
   "active": "d7add3e73e371217",
   "lastOpenFiles": [
-    "Ideas y conceptos.md",
     "Enlaces.md",
+    "Ideas y conceptos.md",
     "Tareas a realizar.md",
     "Pasted image 20230719201922.png",
     "Apuntes en sucio.md",

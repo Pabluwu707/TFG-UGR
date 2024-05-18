@@ -21,7 +21,7 @@ class indigoClient {
     this.socket = new WebSocket(socketUrl);
 
     this.socket.addEventListener('open', () => {
-      console.log("We connected to the server %s !", socketUrl);
+      console.log("We connected to the server at %s !", socketUrl);
     });
 
     this.socket.addEventListener('message', (event) => {
@@ -78,24 +78,6 @@ class indigoClient {
       }
     }
   }
-  
-  getAllPropertiesFromServer(version: number = 512, device?: string, propertyName?: string): void {
-    let result = "";
-    
-    let messageDevice = "";
-    let messagePropertyName = "";
-
-    if (device != undefined) {
-      messageDevice = ", &quot;device&quot;: &quot;" + device + "&quot; ";
-    }
-    if (propertyName != undefined) {
-      messagePropertyName = ", &quot;name&quot;: &quot;" + propertyName + "&quot; ";
-    }
-
-    let messageData = " ('{ &quot;getProperties&quot;: { &quot;version&quot;: 512" + messageDevice + messagePropertyName + "} }') ";
-    
-    this.send(messageData);
-  }
 
   updateRegisteredProperty(name: string, key: string, newValue: string): void {
     const searchIndex = this.indigoData.findIndex((element) => element.name === name);
@@ -107,6 +89,61 @@ class indigoClient {
     } else {
       console.log("Unable to update the Property.");
     }
+  }
+  
+  // Sends a message requesting all properties to the INDIGO Server
+  sendGetPropertiesMessage(protocolVersion: number = 512, deviceName?: string, propertyName?: string): void {
+    
+    let messageDevice = "";
+    let messagePropertyName = "";
+
+    if (deviceName != undefined) {
+      messageDevice = ", &quot;device&quot;: &quot;" + deviceName + "&quot; ";
+    }
+    if (propertyName != undefined) {
+      messagePropertyName = ", &quot;name&quot;: &quot;" + propertyName + "&quot; ";
+    }
+
+    let messageData = " ('{ &quot;getProperties&quot;: { &quot;version&quot;: " + protocolVersion + messageDevice + messagePropertyName + "} }') ";
+    
+    this.send(messageData);
+  }
+
+  // Sends new target value of an already existing Property item to INDIGO Server
+  // TO-DO: Send Property class instance as parameter? That way property type can be inferred from the class 
+  //        instead of being requested as parameter
+  //
+  sendSetPropertyMessage(propertyType: string, deviceName: string, propertyName: string, 
+                        itemName: string, itemTargetValue: string) {
+    
+    // Set property state to busy locally
+    const deviceIndex = this.indigoDevices.findIndex((element) => element.device_name === deviceName);
+    this.indigoDevices[deviceIndex].setPropertyToBusy(propertyName);
+
+    // Prepare the message and send it to the INDIGO Server
+    // TO-DO: Use switch statement to set property type instead of requesting it as parameter?
+    let messageData = " ('{ &quot;" + propertyType 
+    + "&quot;: { &quot;device&quot;: &quot;" + deviceName 
+    + "&quot;, &quot;name&quot;: &quot;" + propertyName 
+    + "&quot;, &quot;items&quot;:[{&quot;name&quot;:&quot;" + itemName 
+    + "&quot;, &quot;value&quot;:" + itemTargetValue 
+    + "}]}}') ";
+    
+    this.send(messageData);
+  }
+
+  // Sends Delete message for a Device to the INDIGO Server
+  sendDelPropertyMessage(deviceName: string, propertyName?: string) {
+    
+    let messagePropertyName = "";
+    
+    if (propertyName != undefined) {
+      messagePropertyName = ", &quot;name&quot;: &quot;" + propertyName + "&quot; ";
+    }
+
+    let messageData = " ('{ &quot;deleteProperty&quot;: { &quot;device&quot;: " + deviceName + messagePropertyName + "} }') ";
+    
+    this.send(messageData);
   }
 
   // CÓDIGO DE DEBUGEO: IMPRIME EL TIPO DE PROPERTY SEGUIDO

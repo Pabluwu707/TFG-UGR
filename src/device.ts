@@ -72,13 +72,19 @@ class device {
     }
   }
 
-  getPropertyByName(propertyNameToSearch: String) {
-    const searchIndex = this.device_properties.findIndex((element) => element.name === propertyNameToSearch);
+  getPropertyByName(propertyNameToSearch: String): any {
+    const propertyIndex = this.device_properties.findIndex((element) => element.name === propertyNameToSearch);
+    return this.device_properties[propertyIndex]
   }
 
   isPropertyAdded(propertyToSearch: any): boolean {
-    const searchIndex = this.device_properties.findIndex((element) => element.name === propertyToSearch.name);
-    return (searchIndex !== -1)
+    const propertyIndex = this.device_properties.findIndex((element) => element.name === propertyToSearch.name);
+    return (propertyIndex !== -1)
+  }
+
+  setPropertyToBusy(propertyName: String): void {
+    const propertyIndex = this.device_properties.findIndex((element) => element.name === propertyName);
+    this.device_properties[propertyIndex].setState(State.Busy);
   }
 }
 
