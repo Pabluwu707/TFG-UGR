@@ -2,6 +2,13 @@
 
 ## Enlaces para bibliografía
 
+SISTEMAS DISTRIBUIDOS
+https://www.confluent.io/es-es/learn/distributed-systems/
+
+ASCOM
+https://ascom-standards.org/index.htm
+https://www.ascom-alpaca.org/learn
+
 Página oficial de INDI
 https://indilib.org/
 
@@ -17,6 +24,9 @@ https://github.com/indigo-astronomy
 
 INDIGO - Proyecto en GitHub
 https://github.com/indigo-astronomy/indigo
+
+Listado de drivers y agentes
+https://www.indigo-astronomy.org/hardware.html
 
 INDIGO-control-panel: Panel de control, cliente para conectarse a INDIGO Servidor. Está en GitHub, pero no viene compilado. Habría que ver que hacer con eso. Tiene paquete para apt-get.
 
@@ -61,3 +71,8 @@ https://google.github.io/styleguide/tsguide.html#file-encoding-utf-8 - Google Ty
 
 [https://www.typescriptlang.org/docs/handbook/2/everyday-types.html](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html")
 [https://www.typescriptlang.org/docs/handbook/2/narrowing.html](https://www.typescriptlang.org/docs/handbook/2/narrowing.html "https://www.typescriptlang.org/docs/handbook/2/narrowing.html")[https://www.typescriptlang.org/docs/handbook/2/types-from-types.html](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html")
+
+
+PATRONES DE DISEÑO INTERESANTES PARA EL PROYECTO
+https://www.patterns.dev/vanilla/observer-pattern
+Patrón Observador: ¿se podría usar para la clase GUI (que la clase cliente notifique a la clase GUI cada vez que se produzca un cambio)?

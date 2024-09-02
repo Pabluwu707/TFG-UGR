@@ -228,12 +228,14 @@ Vamos a ir tomando nota de los posibles requisitos del proyecto
 ### Cliente web de ejemplo?
 - Registro, login y borrado de usuarios
 - Gestión de permisos: cada usuario tendrá un rol asignado con distintos permisos. Se plantea la psobilidad de crear un usuario con solo permisos de lectura, y un superusuario con permisos de escritura y lectura.
-- Registro en cliente de los dispositivos disponibles, ya sea de manera independiente o a través de un servidor que los encapsule, y de cada uno de sus vectores Propiedad.
-- Mostrar al usuario desde el cliente un listado de las Propiedades de todos los Dispositivos conectados
-- Actualizar en directo las propiedades de un Dispositivo en consonancia con los cambios que se realicen desde este.
-- Enviar al dispositivo solicitudes de modificación de uno o más elementos de una Propiedad en tiempo real.
-- Gestionar estados de las Propiedades registradas dentro del cliente independientemente de las respuestas del Dispositivo.
-- Eliminar Propiedades o Dispositivos completos del registro del cliente conforme lleguen solicitudes desde los Dispositivos.
+- La interfaz debe almacenar localmente una lista de los dispositivos disponibles y de cada uno de sus propiedades.
+-  La interfaz debe mostrar al usuario desde el cliente un listado de las propiedades de todos los Dispositivos conectados
+-  La interfaz debe actualizar en tiempo real las propiedades de un dispositivo en consonancia con los cambios que se realicen en el servidor.
+- La interfaz debe permitir enviar al servidor solicitudes de modificación de uno o más elementos de una Propiedad en tiempo real.
+- La interfaz debe limitar el acceso y modificación de las propiedades en función de su estado y permisos
+- La interfaz debe gestionar estados de las Propiedades registradas dentro del cliente independientemente de las respuestas del Dispositivo.
+- La interfaz debe eliminar propiedades o dispositivos de la lista conforme lleguen solicitudes desde los Dispositivos.
+- La interfaz debe permitir programar cambios específicos de las propiedades a horas determinadas
 -----
 
 # Sobre la biblioteca en Javascript

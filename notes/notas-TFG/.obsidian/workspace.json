@@ -13,7 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tareas a realizar.md",
+                "file": "Apuntes en sucio.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2a00daba9a725682",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Ideas y conceptos.md",
                 "mode": "source",
                 "source": false
               }
@@ -32,24 +44,12 @@
             }
           },
           {
-            "id": "dd9582c84d0ad81a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Enlaces.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "d9602f4f824b3455",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Historia de usuario.md",
+                "file": "Ideas y conceptos.md",
                 "mode": "source",
                 "source": false
               }
@@ -61,14 +61,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Apuntes en sucio.md",
+                "file": "Ideas y conceptos.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "0e20b647b6e6d489",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Ideas y conceptos.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -142,7 +154,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Apuntes en sucio.md",
+                "file": "Ideas y conceptos.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -159,7 +171,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Apuntes en sucio.md",
+                "file": "Ideas y conceptos.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -182,7 +194,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Apuntes en sucio.md"
+                "file": "Ideas y conceptos.md"
               }
             }
           },
@@ -225,16 +237,16 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "d7add3e73e371217",
+  "active": "d9602f4f824b3455",
   "lastOpenFiles": [
-    "Enlaces.md",
-    "Ideas y conceptos.md",
-    "Tareas a realizar.md",
-    "Pasted image 20230719201922.png",
     "Apuntes en sucio.md",
-    "Calendario - Temporización del proyecto.md",
-    "Dudas para tutor.md",
+    "Tareas a realizar.md",
     "Historia de usuario.md",
+    "Ideas y conceptos.md",
+    "Enlaces.md",
+    "Dudas para tutor.md",
+    "Calendario - Temporización del proyecto.md",
+    "Pasted image 20230719201922.png",
     "Untitled.canvas",
     "30-03-2023.md",
     "2023-03-30.md",

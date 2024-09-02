@@ -1,0 +1,395 @@
+\chapter{Planificación}
+
+\section{Metodología utilizada}
+
+Se ha realizado un análisis de diversas metodologías con el objetivo de seleccionar la más adecuada para la planificación y el desarrollo del proyecto. 
+
+Considerando las características y requisitos planteados para el proyecto, se consideró inicialmente el uso de una metodología ágil iterativa, como Scrum, Kanban o Extreme Programming. Una metodología iterativa nos permitiría establecer una planificación flexible desde el primer momento, con la que poder establecer hitos y realizar revisiones periódicas con el cliente para asegurar el progreso adecuado del proyecto.
+
+Sin embargo, es importante tener en cuenta que este proyecto se ha realizado en solitario. Las metodologías ágiles están diseñadas principamente para equipos colaborativos, y requieren la coordinación de diversos roles, por lo que será necesario adaptar estas metodologías para un proceso de desarrollo en solitario.
+
+Por tanto, se han elegido y adaptado las técnicas y herramientas de mayor interés de las metodologías de desarrollo ágil para proponer una metodología personalizada para este proyecto. A continuación se detallan los elementos de esta: 
+
+\subsection{Gestión de tareas con historias de usuario}
+
+Las historias de usuario, empleadas en metodologías ágiles como Scrum, Extreme Programming, y Kanban, son una herramienta esencial que permiten definir los aspectos claves del desarrollo del proyecto de una manera clara, poniendo el enfoque en la experiencia y las necesidades del usuario final del producto. Ya que definen las funcionalidades que queremos implementar desde el punto de vista del producto final, son extremadamente flexibles y permiten adaptarse a los cambios que puedan surgir en los requisitos durante el desarrollo.
+
+Se establecerán por tanto una serie de historias de usuario basadas en los requisitos del proyecto previamente establecidos, y se gestionarán a través de un Product Backlog. Cada historia de usuario tendrá asignada una prioridad en función de su importancia para el funcionamiento y éxito del proyecto.
+
+\subsection{Desarrollo iterativo}
+
+Dado que este proyecto cuenta con una fecha de finalización fija, se ha decidido definir una estructura iterativa inspirada en la metodología ágil Scrum. Scrum permite definir una planificación iterativa e incremental, en la que cada iteración da como resultado una versión funcional del productor, sobre la que es posible realizar pruebas y recibir feedback. 
+
+Tomando esta base, la metodología propuesta definirá una serie de sprints o iteraciones cortas, de dos semanas de duración. Al comienzo de cada sprint se asignarán un determinado número de historias de usuario del Product Backlog, con el objetivo de que al finalizar cada sprint se obtenga un producto ejecutable. Al terminar un sprint, se llevará a cabo una revisión de las historias completadas y de aquellas que quedaron pendientes, y se valorarán los producto obtenidos. Esto nos permitirá adaptar la planificación para futuras iteraciones de manera dinamica en función de los resultados logrados.
+
+Como se ha mencionado anteriormente, al ser un proyecto realizado de manera individual, no se asignarán los roles de Product Owner, Scrum Master o Team, comúnmente asignados durante estas iteraciones. En su lugar todas sus responsabilidades serán asumidas por el desarrollador principal.
+
+\subsection{Uso de Tablero Kanban}
+
+Una de las herramientas ágiles más prácticas para la gestión de un proyecto son los tableros Kanban utilizados en la metodología Kanban. Esta herramienta complementará al Product Backlog y nos permitirá representar visualmente el progreso y estado de cada tarea.
+
+Por cada iteración se creará un tablero Kanban, organizado por columnas, con todas las tareas asignadas para ese periodo. Las tareas tendrán asignado un estado en función de su situación:
+
+\begin{itemize}
+	\item Por hacer: Historias que están pendientes de ser implementadas.
+	\item En curso: Aquellas historias que se están implementando actualmente. 
+	\item Bloqueado: Historias cuyo desarrollo ha sido interrumpido momentáneamente, posiblemente a la espera de que otras historias progresen. 
+	\item Completado: Tareas finalizadas y cuyo funcionamiento es correcto.
+\end{itemize}
+
+Además de servir como una guía visual del progreso durante cada iteración, este tablero nos podrá ayudar a detectar más fácilmente cuellos de botella en caso de que se produzcan.
+
+\section{Herramientas utilizadas}
+
+\subsection{JavaScript y TypeScript}
+
+La herramienta principal elegida para la implementación del cliente web va a ser el lenguaje de programación JavaScript. Una de las características clave que se han valorado en este proyecto es maximizar la compatibilidad con toda clase de dispositivos, un objetivo que se puede lograr sin dificultad con JavaScript, ya que todos los navegadores web son capaces de interpretar código JavaScript de manera nativa. Además de su alta compatibilidad, JavaScript permite el envío y recepción de mensajes a través de protocolos TCP/IP en tiempos real y de manera asincrona, una característica fundamental para nuestra solución.
+ 
+Durante el desarrollo del código de la aplicación se hará uso del lenguaje de programación TypeScript. TypeScript es un lenguaje construido sobre JavaScript, que implementa una serie de características adicionales que facilitarán significativamente el desarrollo de la aplicación.
+
+Una de las principales diferencias de  TypeScript sobre JavaScript es su capacidad de definir tipos de datos estáticos para las variables, parámetros y funciones del código, lo que nos permite una detección y depuración de errores mucho más rápida que JavaScript. Además, TypeScript introduce también funciones avanzadas en el lenguaje, como interfaces, tipos genéricos, y modificadores de acceso. Estas herramientas tan sólidas nos serán de gran utilidad durante el desarrollo de la estructura de datos del cliente, permitiendonos mayor control y flexibilidad sobre como definimios tipos y organizamos el código.
+
+Otra gran ventaja de TypeScript es que, una vez completado el desarrollo, el código escrito en TypeScript se compila en un código JavaScript totalmente equivalente. Esto significa que podremos disfrutar de todas las ventajas de TypeScript y el resultado final seguirá siendo igual de funcional que cualquier código JavaScript, por lo que seguiremos disfrutando de la compatibilidad y la eficiencia de JavaScript.
+
+\subsection{Visual Studio Code}
+ 
+Como editor de código fuente usaremos el entorno de desarrollo integrado (IDE) Visual Studio Code. VS Code es un IDE de código abierto y gratuito desarrollado por Microsoft, destacado por ser altamante customizable, y por ofrecer una gran cantidad de funcionalidades que facilitarán el desarrollo del proyecto. Entre estas, las características que nos serán más relevantes son su capacidad de depurar el código, la integración nativa con el sistema de control de versiones Git, y el resaltado de código y la correción de errores en tiempo real.
+
+Además, VS Code cuenta con una gran colección de extensiones que permiten la programación en cualquier lenguaje que requiera el proyecto. Aunque en este caso será utilizado principalmente para la programación y compilación de código TypeScript,  HTML y CSS, gracias a la extensión de LaTex WorkShop se podrá utilizar también para la redacción de la documentación del proyecto, permitiéndonos integrar el proceso de desarrollo y documentación en un solo entorno.
+
+\subsection{Empaquetado de módulos con RollUp}
+ 
+Otro de los objetivos principales de este proyecto es garantizar que nuestro cliente funcione como una biblioteca JavaScript y que pueda ser importado como un módulo para ser integrado en otros proyectos si cualquier otro desarrollador requiere de sus funcionalidades. Para encapsular el código del cliente junto con todos sus archivos en un único fichero de la manera más óptima posible, requeriremos de un "bundler", o empaquetador que automatizar el proceso. Además, un empaquetador nos permitirá exportar nuestro código en diferentes formatos de módulo, facilitando su uso en diferentes patrones de diseño y sistemas de módulos de JavaScript, como ECMAScript Modules (ESM), CommonJS (CJS) o Immediately Invoked Function Expression (IIFE).
+ 
+Para este proyecto se ha decidido usar Rollup, una aplicacion de empaquetado caracterizada por su optimización en la creación y agrupación de bibliotecas. Rollup es especialmente eficiente en la eliminación de código no utilizado (técnica conocida como "tree-shaking", o eliminación de código muerto) lo que le permite generar archivos más ligeros y de mayor rendimiento.
+ 
+Otros programas de empaquetado que se han considerado como alternativas son webpack y Rollup. 
+
+Webpack es una herramienta mucho más potente que Rollup, capaz de empaquetar no solo código JS, sino también CSS, imágenes y otros tipos de archivoss. Esto lo hace una solución mucho más adecuada para aplicaciones grandes y complejas, superando excesivamente las necesidades específicasde este proyecto.
+
+Paor otro lado, Parcel destaca por su configuración mínima y su rapidez y eficiencia en el empaquetado. Es apto para proyecto pequeños a medianos y muy sencillo de desplegar, pero ofrece menos opciones de personalización y soporte de módulos en comparación con Rollup, por lo que se considera una opción inferior para este proyecto en particular.
+ 
+\subsection{Interfaz gráfica con HTML y CSS}
+
+Para el desarrollo de la interfaz gráfica del cliente, se ha barajado la posibilidad de utilizar un framework front-end como Angular, React, o Vue.js, los cuales son ampliamente utilizados en el dearrollo de aplicaciones web por su capacidad para crear aplicaciones dinámicas de manera eficiente.
+
+Sin embargo, tras discutir esta posibilidad con el cliente, se dedició optar por una solución diferente. Se valoró especialmente la simplicidad y disponibilidad del producto, con el objetivo de asegurar su compatibilidad con toda clase de dispositivos. Por ello, se  concluyó que lo más adecuado es desarrollar la aplicación utilizando JavaScript puro, sin la incorporación de ningún framework adicional. 
+
+Esta decisión permitirá crear una interfaz lo más ligera y sencilla posible, minimizando los problemas de compatibilidad al integrarse en cualquier otro tipo de página existente sin problemas de compatibilidad, y ofreciendo un diseño eficiente y fácilmente adaptable a las necesidades específicas del usuario si fuese necesario.
+
+\subsection{Control de versiones con Git} 
+
+Para el control de versiones del proyecto se ha decidido hacer uso de GitHub. Esta elección se basa en la amplia experiencia previa con la herramienta, así como en las numerosas funcionalidades que ofrece, las cuales se adaptan perfectamente a las necesidades del proyecto. 
+
+Se ha creado un repositorio en GitHub desde el inicio del proyecto, en el que cual se irá publicado y actualizando el proyecto de manera continua. Para mantener haremos uso de la herramienta de ramas, dedicando su propia rama independiente a cada nueva funcionalidad que implementemos. Estas ramas serán fusionadas con las principal una vez garantizado su correcto funcionamiento.
+
+\subsection{Gestión de historias de usuario con Notion}
+
+%Completar 
+ 
+\section{Historias de usuario}
+
+Se establecen a continuación las historias de usuario generadas en función de los requisitos del proyecto establecidos. Primero, definimos los dos perfiles de usuario que aparecerán en nuestras historias:
+
+\begin{itemize}
+	\item \textbf{Desarrollador:} Perfil que representa al usuario desarrollador que busca integrar y hacer uso de la biblioteca web en su propia aplicación. Posee conocimientos avanzados de programación web en JavaScript, y puede o no tener experiencia con el uso del protocolo INDIGO. Interactua con la biblioteca a través del código durante el proceso de desarrollo, con el objetivo de usar sus funcionalidades para manejar dispositivos astronómicos en su proyecto.
+	\item \textbf{Usuario:} Perfil que representa al astrónomo promedio, que hará uso de la aplicación mediante la intergaz gráfica web para gestionar sus dispositivos astronómicos. Aunque tiene conocimiento sobre el material astronómico involucrado, pero no se espera que tenga experiencia en programación ni en el protocolo de mensajes INDIGO. Su interacción con el sistema se limita al uso de la interfaz a través de un dispositivo con navegador web, como un ordenador o dispositivo móvil.
+\end{itemize}
+ 
+Como podemos ver, hay una clara distinción entre el perfil de usuario promedio y el de desarrollador. Mientras que el usuario promedio interactúa exclusivamente con la interfaz de la aplicación, el desarrollador lo hace a través del código y la programación, por lo que las historias relacionadas con este estarán mucho más especializadas en torno a ese contexto de entorno de desarrollo. 
+
+\subsection{INDIGO-1: Biblioteca JavaScript}
+
+\begin{enumerate}[label=\textbf{INDIGO.1.\arabic*}, leftmargin=10mm]
+	\item Como desarrollador, quiero establecer una conexión con el servidor INDIGO haciendo uso del protocolo WebSocket
+	
+	\textbf{Prioridad:} Muy Alta
+	\item Como desarrollador, quiero enviar mensajes formato JSON al servidor a través de la conexión WS.
+	
+	\textbf{Prioridad:} Muy Alta
+	\item Como desarrollador, quiero recibir mensajes del servidor en tiempo real a través de la conexión.
+	
+	\textbf{Prioridad:} Muy Alta
+
+	\item Como desarrollador, quiero que los mensajes recibidos sean procesados correctamente en función del tipo de respuesta (almacenar cambios en las Propiedades, procesar mensajes de error, notificaciones de conexión/desconexión...)
+	
+	\textbf{Prioridad:} Alta
+
+	\item Como desarrollador, quiero que se almacenen en una estructura de datos las Propiedades que se reciban a través de mensajes y que no hayan sido almacenadas previamente.
+	
+	\textbf{Prioridad:} Alta
+	\item Como desarrollador, quiero que se actualicen automáticamente la estructura de datos de las Propiedades almacenadas al recibir mensajes con Propiedades almacenadas previamente.
+	
+	\textbf{Prioridad:} Alta
+	\item Como desarrollador quiero que se verifiquen que los datos de las Propiedades almacenadas en la estructura de datos sean correctos y estén dentro de los rangos especificados, y que se detecten errores si se producen.
+	
+	\textbf{Prioridad:} Media
+
+	\item Como desarrollador, quiero solicitar la información de todas las Propiedades asociadas a un servidor INDI.
+	
+	\textbf{Prioridad:} Media
+	\item Como desarrollador, quiero solicitar información sobre una o varias Propiedades específicas asociadas a un servidor.
+	
+	\textbf{Prioridad:} Alta
+	\item Como desarrollador, quiero realizar cambios sobre las Propiedades almacenadas en la estructura de datos y enviar esos cambios a través de mensajes al servidor.
+	
+	\textbf{Prioridad:} Alta
+	\item Como desarrollador, quiero que las solicitudes de lectura o escritura de Propiedades se limiten/restrinjan en función de sus permisos (Read-only, Write-only, Read-write)
+	
+	\textbf{Prioridad:} Baja
+	\item Como desarrollador, quiero que el State de una Propiedad (Idle, OK, Busy, Alert) se modifique automáticamente dentro de la estructura de datos al State correspondiente tras realizar modificaciones sobre dicha propiedad.
+	
+	\textbf{Prioridad:} Baja
+\end{enumerate}
+
+\subsection{INDIGO-2: Interfaz gráfica}
+
+\begin{enumerate}[label=\textbf{INDIGO.2.\arabic*}, leftmargin=10mm]
+	\item Como usuario, quiero que la aplicación establezca una conexión con un servidor INDIGO a través de la red.
+	
+	\textbf{Prioridad:} Muy Alta
+	\item Como usuario, quiero que la aplicación haga uso de la biblioteca cliente INDIGOScript.
+	
+	\textbf{Prioridad:} Muy Alta
+	\item Como usuario, quiero que la aplicación me muestre un listado de todos los dispositivos conectados al servidor y sus propiedades.
+	
+	\textbf{Prioridad:} Muy Alta
+	\item Como usuario, quiero que los valores almacenados en la aplicación se modifiquen automáticamente al recibir nuevos datos del servidor.
+	
+	\textbf{Prioridad:} Alta
+	\item Como usuario, quiero poder visualizar los elementos de una propiedad tipo Text.
+	
+	\textbf{Prioridad:} Alta
+	\item Como usuario, quiero poder modificar los valores de una propiedad tipo Text.
+	
+	\textbf{Prioridad:} Alta
+	\item Como usuario, quiero poder visualizar los elementos de una propiedad tipo Number.
+	
+	\textbf{Prioridad:} Alta
+	\item Como usuario, quiero poder modificar los valores de una propiedad tipo Number.
+	
+	\textbf{Prioridad:} Alta
+	\item Como usuario, quiero poder visualizar los elementos de una propiedad tipo Switch.
+	
+	\textbf{Prioridad:} Alta
+	\item Como usuario, quiero poder modificar los valores de una propiedad tipo Switch.
+	
+	\textbf{Prioridad:} Alta
+	\item Como usuario, quiero poder visualizar los elementos de una propiedad tipo Light.
+	
+	\textbf{Prioridad:} Media
+	\item Como usuario, quiero poder visualizar los elementos de una propiedad tipo BLOB.
+	
+	\textbf{Prioridad:} Media
+	\item Como usuario, quiero que el acceso y modificación de los valores estén restringidos en función de sus permisos y estado.
+	
+	\textbf{Prioridad:} Baja
+	\item Como usuario, quiero que las propiedades se eliminen automáticamente del cliente al ser eliminadas del servidor.
+	
+	\textbf{Prioridad:} Muy Baja
+	\item Como usuario, quiero poder programar cambios en los valores de las propiedades para que se ejecuten a horas especificas.
+	
+	\textbf{Prioridad:} Muy Baja
+\end{enumerate}
+
+Es de extrema importancia señalar que, por la naturaleza del proyecto, las funcionalidades de la interfaz web estará fuertemente ligado al uso de un cliente INDIGO con un mínimo de funcionalidades. Por tanto, priorizaremos el desarrollo e implementación de la biblioteca cliente durante las primeras iteraciones del proyecto, y posteriormente, dedicaremos las siguientes iteraciones al desarrollo de la interfaz con un cliente INDIGO ya establecido. Se define a continuación esta temporización con más detalle.
+
+\section{Temporización}
+
+\subsection{Fases del proyecto
+}
+Se realizó una estimación inicial de las distintas fases que compondrían el proyecto, asignando a cada una sus determinados objetivos, hitos e historias de usuario. A continuación se detallan las fases del proyecto:
+
+\begin{itemize}
+	\item \textbf{1a fase - Metodologías de desarrollo}
+	
+	\textbf{Duración estimada:} 1 semana
+	
+	\textbf{Objetivo:} Dentro de esta fase se recogen todos los preparativos iniciales realizados de cara al comienzo del proyecto, incluyendo la propuesta inicial del problema y su solución, una primera propuesta de los requisitos de la aplicación, la elección de la metodología a utilizar, y la planificación de la temporización.
+	
+	
+	\item \textbf{2a fase - Definición de requisitos}
+	
+	\textbf{Duración estimada:} 2 semanas
+	
+	\textbf{Objetivo:} En esta fase se recogen la depuración de los requisitos anteriormente planteados y la creación de historias de usuario en base a estos junto con una estimación de sus prioridades. 
+	
+	
+	\item \textbf{3a fase - Investigación tecnológica}
+	
+	\textbf{Duración estimada:} 2 semanas
+	
+	\textbf{Objetivo:} Esta fase se destina a la investigación de las tecnologías web y los protocolos de gestión de dispositivos astronómicos de los que tendremos que valernos durante el desarrollo del proyecto. 
+	
+	
+	\item \textbf{4a. fase - Diseño y arquitectura}
+	
+	\textbf{Duración estimada:} 2 semanas
+	
+	\textbf{Objetivo:} Se establecerá la arquitectura básica de nuestra aplicación y se esbozará un primer diseño preliminar de los wireframes de nuestra aplicación.
+	
+	
+	\item \textbf{5a. fase - Sprint 1: Creación de biblioteca y estructura de datos}
+	
+	\textbf{Duración estimada:} 2 semanas
+	
+	\textbf{Objetivo:} Con esta fase comienza la implementación del proyecto. El primer sprint se destinará a la creación de la estructura de datos del cliente y de la biblioteca, y sus funcionalidades fundamentales: conexión con el servidor y envío de mensajes.
+	 
+	
+	\item \textbf{6a. fase - Sprint 2: Funcionalidades de la biblioteca}
+	
+	\textbf{Duración estimada:} 2 semanas
+	
+	\textbf{Objetivo:} Durante esta fase continúa la implementación del cliente, añadiendo las funcionalidades restantes y asegurando una correcta interpretación de mensajes y almacenamiento correcto de los datos. 
+	
+	
+	\item \textbf{7a. fase - Sprint 3: Creación de la interfaz gráfica}
+	
+	\textbf{Duración estimada:} 2 semanas
+	
+	\textbf{Objetivo:} Esta fase se destinará a la creación de la interfaz gráfica web de la aplicación, tomando como base el cliente ya establecido. Se implementarán sus funcionalidades básicas. 
+	
+	\item \textbf{8a. fase - Sprint 4: Funcionalidades de la interfaz gráfica y refinado de la aplicación.}
+	
+	\textbf{Duración estimada:} 2 semanas
+	
+	\textbf{Objetivo:} Durante esta fase se continuará implementando las funcionalidades restantes de la interfaz gráfica. 
+\end{itemize}
+
+
+Establecidas las fases de nuestro proyecto, estos son los plazos temporales inicialmente establecidos para cada fase, con la consideración de que el proyecto se planificó inicialmente con junio de 2024 como la fecha de finalización del proyecto:
+
+\begin{enumerate}
+	\item \textbf{Metodologías de desarrollo:} 10 de diciembre - 17 de diciembre de 2023
+	\item \textbf{Definición de requisitos:} 17 de diciembre - 29 de diciembre de 2023
+	\item \textbf{Investigación tecnológica:} 4 de enero - 13 de enero de 2024
+	\item \textbf{Diseño y arquitectura:} 13 de enero - 26 de enero de 2024
+	\item \textbf{Sprint 1:} 28 de enero - 10 de febrero de 2024
+	\item \textbf{Sprint 2:} 11 de febrero - 24 de febrero de 2024
+	\item \textbf{Sprint 3:} 25 de febrero - 9 de marzo de 2024
+	\item \textbf{Sprint 4:} 10 de marzo - 23 de marzo de 2024
+	\item \textbf{Pruebas y pulido:} 27 de marzo - 9 de abril de 2024
+\end{enumerate}
+
+
+Estas fases con sus plazos quedaron representadas y organizadas en el siguiente diagrama de Gannt:
+
+%IMAGEN GANTT
+
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[scale=0.35]{img/gantt\ sprints.png}
+%	\caption{Diagrama de Gantt de las etapas del proyecto en la planificación final}
+%\end{figure}
+
+
+\subsection{Asignación de historias de usuario por fase de desarrollo}
+
+\subsubsection{Historias de usuario asignadas al 1er sprint}	
+
+\begin{itemize}[leftmargin=10mm]
+	\item \textbf{INDIGO.1.1  }Como desarrollador, quiero establecer una conexión con el servidor INDIGO haciendo uso del protocolo WebSocket
+	
+	\textbf{Prioridad:} Muy Alta
+	\item \textbf{INDIGO.1.3  }Como desarrollador, quiero recibir mensajes del servidor en tiempo real a través de la conexión.
+	
+	\textbf{Prioridad:} Muy Alta
+	\item \textbf{INDIGO.1.2  }Como desarrollador, quiero enviar mensajes formato JSON al servidor a través de la conexión WS.
+	
+	\textbf{Prioridad:} Muy Alta
+
+	\item \textbf{INDIGO.1.5  }Como desarrollador, quiero que se almacenen en una estructura de datos las Propiedades que se reciban a través de mensajes y que no hayan sido almacenadas previamente.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.1.8  }Como desarrollador, quiero solicitar información sobre una o varias Propiedades específicas asociadas a un servidor.
+	
+	\textbf{Prioridad:} Alta
+
+	\item \textbf{INDIGO.1.9 }Como desarrollador, quiero solicitar la información de todas las Propiedades asociadas a un servidor INDI.
+	
+	\textbf{Prioridad:} Media
+	
+\end{itemize}
+
+\subsubsection{Historias de usuario asignadas al 2o sprint}	
+
+\begin{itemize}[leftmargin=10mm]
+	\item \textbf{INDIGO.1.10 }Como desarrollador, quiero realizar cambios sobre las Propiedades almacenadas en la estructura de datos y enviar esos cambios a través de mensajes al servidor.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.1.4 }Como desarrollador, quiero que los mensajes recibidos sean procesados correctamente en función del tipo de respuesta (almacenar cambios en las Propiedades, procesar mensajes de error, notificaciones de conexión/desconexión...).
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.1.6 }Como desarrollador, quiero que se actualicen automáticamente la estructura de datos de las Propiedades almacenadas al recibir mensajes con Propiedades almacenadas previamente.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.1.7 }Como desarrollador quiero que se verifiquen que los datos de las Propiedades almacenadas en la estructura de datos sean correctos y estén dentro de los rangos especificados, y que se detecten errores si se producen.
+	
+	\textbf{Prioridad:} Media
+	\item \textbf{INDIGO.1.11 }Como desarrollador, quiero que las solicitudes de lectura o escritura de Propiedades se limiten/restrinjan en función de sus permisos (Read-only, Write-only, Read-write)
+	
+	\textbf{Prioridad:} Baja
+	\item \textbf{INDIGO.1.12 }Como desarrollador, quiero que el State de una Propiedad (Idle, OK, Busy, Alert) se modifique automáticamente dentro de la estructura de datos al State correspondiente tras realizar modificaciones sobre dicha propiedad.
+	
+	\textbf{Prioridad:} Baja
+\end{itemize}
+
+
+
+\subsubsection{Historias de usuario asignadas al 3er sprint}	
+
+\begin{itemize}[leftmargin=10mm]
+	\item \textbf{INDIGO.2.1 }Como usuario, quiero que la aplicación establezca una conexión con un servidor INDIGO a través de la red.
+	
+	\textbf{Prioridad:} Muy Alta
+	\item \textbf{INDIGO.2.2 }Como usuario, quiero que la aplicación haga uso de la biblioteca cliente INDIGOScript.
+	
+	\textbf{Prioridad:} Muy Alta
+	\item \textbf{INDIGO.2.3 }Como usuario, quiero que la aplicación me muestre un listado de todos los dispositivos conectados al servidor y sus propiedades.
+	
+	\textbf{Prioridad:} Muy Alta
+	\item \textbf{INDIGO.2.4 }Como usuario, quiero que los valores almacenados en la aplicación se modifiquen automáticamente al recibir nuevos datos del servidor.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.5 }Como usuario, quiero poder visualizar los elementos de una propiedad tipo Text.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.6 }Como usuario, quiero poder modificar los valores de una propiedad tipo Text.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.7 }Como usuario, quiero poder visualizar los elementos de una propiedad tipo Number.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.8 }Como usuario, quiero poder modificar los valores de una propiedad tipo Number.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.9 }Como usuario, quiero poder visualizar los elementos de una propiedad tipo Switch.
+	
+	\textbf{Prioridad:} Alta
+\end{itemize}
+
+\subsubsection{Historias de usuario asignadas al 4o sprint}	
+
+\begin{itemize}[leftmargin=10mm]
+	\item \textbf{INDIGO.2.10 }Como usuario, quiero poder modificar los valores de una propiedad tipo Switch.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.11 }Como usuario, quiero poder visualizar los elementos de una propiedad tipo Light.
+	
+	\textbf{Prioridad:} Media
+	\item \textbf{INDIGO.2.12 }Como usuario, quiero poder visualizar los elementos de una propiedad tipo BLOB.
+	
+	\textbf{Prioridad:} Media
+	\item \textbf{INDIGO.2.13 }Como usuario, quiero que el acceso y modificación de los valores estén restringidos en función de sus permisos y estado.
+	
+	\textbf{Prioridad:} Baja
+	\item \textbf{INDIGO.2.14 }Como usuario, quiero que las propiedades se eliminen automáticamente del cliente al ser eliminadas del servidor.
+	
+	\textbf{Prioridad:} Muy Baja
+	\item \textbf{INDIGO.2.15 }Como usuario, quiero poder programar cambios en los valores de las propiedades para que se ejecuten a horas especificas.
+	
+	\textbf{Prioridad:} Muy Baja
+\end{itemize}
+
+
+\section{Presupuesto}
