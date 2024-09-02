@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>INDIGOScript Client</title>
+
+  <link rel="stylesheet" href="index.css">
+
+  <script type="module" src="dist/index.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <body>
+
+    <h1 style="text-align:center;">Página de pruebas - INDIGO CLIENT</h1>
+
+    <p>Una página de prueba donde ejecutar la biblioteca. Abre la consola para ver los resultados de la ejecución.</p><br>
+    
+    <h2>Envia un mensaje al servidor.</h2>
+    <input type="text" id="messageBox" name="messageBox" placeholder="Introduce un mensaje:" value=" ('{ &quot;getProperties&quot;: { &quot;version&quot;: 512, &quot;client&quot;: &quot;My Client&quot; } }') ">
+    <button type="button" id="buttonSendMessage">Send message</button>
+    
+    <hr>
+    <br>
+
+    <button type="button" id="buttonGetProps">Get properties</button>
+    <br>
+    <button type="button" id="buttonConnectionOn">Connection ON</button>
+    <br>
+    <button type="button" id="buttonSetProp0">Set to 0</button>
+    <button type="button" id="buttonSetProp1234">Set to 1234</button>
+    <br>
+
+    <hr>
+    <br>
+
+    <h2>Ver propiedades almacenadas.</h2>
+    <pre class="indigoscriptgui"></pre>
+    <button type="button" id="buttonCrearTabla">Crear tabla</button>
+    <button type="button" id="buttonContador">ContadorPrueba ++</button>
+  </div>
+
+</body>
+</html>

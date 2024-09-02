@@ -22,6 +22,11 @@
 \usepackage{tabularx}
 \usepackage{booktabs}
 
+% Enumeración customizable en listas enumerate
+\usepackage{enumitem}
+%\renewcommand{\labelenumii}{\theenumii}
+%\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
+
 \usepackage[table,xcdraw]{xcolor}
 \hypersetup{
 	colorlinks=true,	% false: boxed links; true: colored links
@@ -69,25 +74,19 @@
 	\listoftables 
 	\newpage
 
-	% Introducción 
-	\input{secciones/01_introduccion}
-
-	% Descripción del problema y hasta donde se llega
-	\input{secciones/02_descripcion}
-
+	% Introducción, descripción del problema	
 	% Estado del arte
-	% 	1. Crítica al estado del arte
-	% 	2. Propuesta
-	\input{secciones/03_estado_del_arte}
+	% Crítica al estado del arte
+	% Propuesta
+	\input{secciones/01_introduccion}
 	
-	\input{secciones/04_planificacion}
-
+	
+	% Planificación del proyecto, metodología y herramientas usadas
 	% Análisis del problema
-	% 1. Análisis de requisitos
-	% 2. Análisis de las soluciones
-	% 3. Solucion propuesta
-	% 4. Análisis de seguridad
-	\input{secciones/05_analisis}
+	% Análisis de requisitos
+	% Presupuesto
+	\input{secciones/02_planificacion}
+
 
 	% Desarrollo bajo sprints: 
 	% 	1. Permitir registros y login de usuarios
@@ -95,12 +94,11 @@
 	% 	3. Desarrollo del sistema de denuncias administrativas y accidentes
 	% 	4. Desarrollo del sistema de croquis
 	%   5. Instalación de la aplicación de manera automática
-	\input{secciones/06_implementacion}
+	\input{secciones/03_implementacion}
 
-	% Presupuesto
-
+	% Resultado
 	% Conclusiones
-	\input{secciones/07_conclusiones}
+	\input{secciones/04_conclusiones}
 
 	% Trabajos futuros
 

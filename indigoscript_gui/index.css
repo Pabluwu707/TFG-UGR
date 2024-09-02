@@ -1,0 +1,100 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #39393b;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #bebebe;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.indigoproperty{
+  background-color: #a5a5a5;
+  border: 2px solid black;
+  margin: 5px;
+}
+
+.indigopropertytitulo{
+  border: 1px solid black;
+  margin: 4px;
+  padding: 2px;
+}
+
+.indigopropertyitems{
+  border: 1px solid black;
+  margin: 4px;
+  padding: 2px;
+}
+
+.indigobutton{
+  margin: 4px;
+  background-color: #4CAF50;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  overflow: hidden;
+  width: 8.0em; 
+  display: inline-block;
+}
+
+.indigobutton label {
+  line-height: 3.0em;
+  width: 8.0em; 
+  height: 3.0em;
+}
+
+.indigobutton label span {
+  text-align: center;
+  padding: 3px 0;
+  display: block;
+}
+
+.indigobutton label input {
+  position: absolute;
+  display: none;
+  color: #fff !important;
+}
+
+.indigobutton label input + span{color: #fff;}
+
+.indigobutton input:checked + span {
+  color: #ffffff;
+  background-color: #386b3a;
+}
+
+#propertyDisplayBox {
+  background-color: white;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #39393b;
+  box-sizing: border-box;
+  text-wrap: wrap;
+}

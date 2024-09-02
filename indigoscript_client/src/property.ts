@@ -35,7 +35,7 @@ class property {
     this.version = jsonObject.version;
 
     this.state = jsonObject.state;
-    this.perm = jsonObject.permission;
+    this.perm = jsonObject.perm;
   }
 
   // Readonly getters
@@ -57,17 +57,19 @@ class property {
     this.group = newGroup;
   }
 
-  getDevice(): any {
-    return this.device;
+  getState(): any {
+    return this.state;
   }
 
-  setDevice(newDevice: any): void {
-    this.device = newDevice;
+  setState(newState: State): void {
+    this.state = newState;
   }
 }
 
 
 class textProperty extends property {
+  
+  readonly _type: string = "textProperty";
   
   private items: propertyItem[] = [];
 
@@ -78,9 +80,19 @@ class textProperty extends property {
       this.items.push(new propertyItem(singularPropertyItem))
     );
   }
+
+  get type(): string {
+    return this._type;
+  }
+
+  getItems(): any {
+    return this.items;
+  }
 }
 
 class switchProperty extends property {
+  
+  readonly _type: string = "switchProperty";
   
   private rule : string;
   private items: propertyItem[] = [];
@@ -94,9 +106,19 @@ class switchProperty extends property {
     );
     
   }
+
+  get type(): string {
+    return this._type;
+  }
+
+  getItems(): any {
+    return this.items;
+  }
 }
 
 class numberProperty extends property {
+  
+  readonly _type: string = "numberProperty";
 
   private items: propertyItemNumber[] = [];
 
@@ -108,6 +130,64 @@ class numberProperty extends property {
     );
     
   }
+
+  get type(): string {
+    return this._type;
+  }
+
+  getItems(): any {
+    return this.items;
+  }
 }
 
-export { State, Permission, property, textProperty, switchProperty, numberProperty };
+class lightProperty extends property {
+  
+  readonly _type: string = "lightProperty";
+
+  private items: propertyItem[] = [];
+
+  constructor(jsonObject : any) {
+    super(jsonObject);
+    
+    jsonObject.items.forEach((singularPropertyItem) => 
+      this.items.push(new propertyItemNumber(singularPropertyItem))
+    );
+    
+  }
+
+  get type(): string {
+    return this._type;
+  }
+
+  getItems(): any {
+    return this.items;
+  }
+}
+
+class blobProperty extends property {
+  
+  readonly _type: string = "blobProperty";
+
+  private items: propertyItem[] = [];
+
+  constructor(jsonObject : any) {
+    super(jsonObject);
+    
+    jsonObject.items.forEach((singularPropertyItem) => 
+      this.items.push(new propertyItem(singularPropertyItem))
+    );
+    
+  }
+
+  get type(): string {
+    return this._type;
+  }
+
+  getItems(): any {
+    return this.items;
+  }
+}
+
+
+
+export { State, Permission, property, textProperty, switchProperty, numberProperty, lightProperty, blobProperty };
