@@ -4,37 +4,37 @@
 
 Se ha realizado un análisis de diversas metodologías con el objetivo de seleccionar la más adecuada para la planificación y el desarrollo del proyecto. 
 
-Considerando las características y requisitos planteados para el proyecto, se consideró inicialmente el uso de una metodología ágil iterativa, como Scrum, Kanban o Extreme Programming. Una metodología iterativa nos permitiría establecer una planificación flexible desde el primer momento, con la que poder establecer hitos y realizar revisiones periódicas con el cliente para asegurar el progreso adecuado del proyecto.
+Considerando las características y requisitos planteados para el proyecto, se consideró inicialmente el uso de una metodología ágil iterativa, como Scrum\cite{scrum}, Kanban\cite{kanban} o Extreme Programming\cite{xp}. Una metodología iterativa nos permitiría establecer una planificación flexible desde el primer momento, con la que poder establecer hitos y realizar revisiones periódicas con el cliente para asegurar el progreso adecuado del proyecto.
 
-Sin embargo, es importante tener en cuenta que este proyecto se ha realizado en solitario. Las metodologías ágiles están diseñadas principamente para equipos colaborativos, y requieren la coordinación de diversos roles, por lo que será necesario adaptar estas metodologías para un proceso de desarrollo en solitario.
+Sin embargo, es importante tener en cuenta que este proyecto se ha realizado en solitario. \textbf{Las metodologías ágiles están diseñadas principamente para equipos colaborativos}, y requieren la coordinación de diversos roles, por lo que \textbf{será necesario adaptar estas metodologías para un proceso de desarrollo en solitario}.
 
 Por tanto, se han elegido y adaptado las técnicas y herramientas de mayor interés de las metodologías de desarrollo ágil para proponer una metodología personalizada para este proyecto. A continuación se detallan los elementos de esta: 
 
 \subsection{Gestión de tareas con historias de usuario}
 
-Las historias de usuario, empleadas en metodologías ágiles como Scrum, Extreme Programming, y Kanban, son una herramienta esencial que permiten definir los aspectos claves del desarrollo del proyecto de una manera clara, poniendo el enfoque en la experiencia y las necesidades del usuario final del producto. Ya que definen las funcionalidades que queremos implementar desde el punto de vista del producto final, son extremadamente flexibles y permiten adaptarse a los cambios que puedan surgir en los requisitos durante el desarrollo.
+Las \textbf{historias de usuario}, empleadas en metodologías ágiles como Scrum, Extreme Programming, y Kanban, son una herramienta esencial que permiten definir los aspectos claves del desarrollo del proyecto de una manera clara, poniendo el enfoque en la experiencia y las necesidades del usuario final del producto. Ya que definen las funcionalidades que queremos implementar desde el punto de vista del producto final, son extremadamente flexibles y permiten adaptarse a los cambios que puedan surgir en los requisitos durante el desarrollo.
 
-Se establecerán por tanto una serie de historias de usuario basadas en los requisitos del proyecto previamente establecidos, y se gestionarán a través de un Product Backlog. Cada historia de usuario tendrá asignada una prioridad en función de su importancia para el funcionamiento y éxito del proyecto.
+Se establecerán por tanto una serie de historias de usuario basadas en los requisitos del proyecto previamente establecidos, y se gestionarán a través de un \textbf{Product Backlog}. Cada historia de usuario tendrá asignada una prioridad en función de su importancia para el funcionamiento y éxito del proyecto.
 
 \subsection{Desarrollo iterativo}
 
-Dado que este proyecto cuenta con una fecha de finalización fija, se ha decidido definir una estructura iterativa inspirada en la metodología ágil Scrum. Scrum permite definir una planificación iterativa e incremental, en la que cada iteración da como resultado una versión funcional del productor, sobre la que es posible realizar pruebas y recibir feedback. 
+Dado que este proyecto cuenta con una fecha de finalización fija, se ha decidido definir una \textbf{estructura iterativa} inspirada en la metodología ágil \textbf{Scrum}. Scrum permite definir una planificación iterativa e incremental, en la que cada iteración da como resultado una versión funcional del productor, sobre la que es posible realizar pruebas y recibir feedback. 
 
-Tomando esta base, la metodología propuesta definirá una serie de sprints o iteraciones cortas, de dos semanas de duración. Al comienzo de cada sprint se asignarán un determinado número de historias de usuario del Product Backlog, con el objetivo de que al finalizar cada sprint se obtenga un producto ejecutable. Al terminar un sprint, se llevará a cabo una revisión de las historias completadas y de aquellas que quedaron pendientes, y se valorarán los producto obtenidos. Esto nos permitirá adaptar la planificación para futuras iteraciones de manera dinamica en función de los resultados logrados.
+Tomando esta base, la metodología propuesta definirá \textbf{una serie de sprints o iteraciones cortas, de dos semanas de duración}. Al comienzo de cada sprint se asignarán un determinado número de historias de usuario del \textbf{Product Backlog}, con el objetivo de que al finalizar cada sprint se obtenga un producto ejecutable. Al terminar un sprint, se llevará a cabo una revisión de las historias completadas y de aquellas que quedaron pendientes, y se valorarán los producto obtenidos. Esto nos permitirá adaptar la planificación para futuras iteraciones de manera dinamica en función de los resultados logrados.
 
-Como se ha mencionado anteriormente, al ser un proyecto realizado de manera individual, no se asignarán los roles de Product Owner, Scrum Master o Team, comúnmente asignados durante estas iteraciones. En su lugar todas sus responsabilidades serán asumidas por el desarrollador principal.
+Como se ha mencionado anteriormente, al ser un proyecto realizado de manera individual, \textbf{no se asignarán los roles} de Product Owner, Scrum Master o Team, comúnmente asignados durante estas iteraciones. En su lugar todas sus responsabilidades serán asumidas por el desarrollador principal.
 
 \subsection{Uso de Tablero Kanban}
 
-Una de las herramientas ágiles más prácticas para la gestión de un proyecto son los tableros Kanban utilizados en la metodología Kanban. Esta herramienta complementará al Product Backlog y nos permitirá representar visualmente el progreso y estado de cada tarea.
+Una de las herramientas ágiles más prácticas para la gestión de un proyecto son los \textbf{tableros Kanban} utilizados en la metodología Kanban. Esta herramienta complementará al Product Backlog y nos permitirá representar visualmente el progreso y estado de cada tarea.
 
 Por cada iteración se creará un tablero Kanban, organizado por columnas, con todas las tareas asignadas para ese periodo. Las tareas tendrán asignado un estado en función de su situación:
 
 \begin{itemize}
-	\item Por hacer: Historias que están pendientes de ser implementadas.
-	\item En curso: Aquellas historias que se están implementando actualmente. 
-	\item Bloqueado: Historias cuyo desarrollo ha sido interrumpido momentáneamente, posiblemente a la espera de que otras historias progresen. 
-	\item Completado: Tareas finalizadas y cuyo funcionamiento es correcto.
+	\item \textbf{Por hacer}: Historias que están pendientes de ser implementadas.
+	\item \textbf{En curso}: Aquellas historias que se están implementando actualmente. 
+	\item \textbf{Bloqueado}: Historias cuyo desarrollo ha sido interrumpido momentáneamente, posiblemente a la espera de que otras historias progresen. 
+	\item \textbf{Completado}: Tareas finalizadas y cuyo funcionamiento es correcto.
 \end{itemize}
 
 Además de servir como una guía visual del progreso durante cada iteración, este tablero nos podrá ayudar a detectar más fácilmente cuellos de botella en caso de que se produzcan.
@@ -43,60 +43,62 @@ Además de servir como una guía visual del progreso durante cada iteración, es
 
 \subsection{JavaScript y TypeScript}
 
-La herramienta principal elegida para la implementación del cliente web va a ser el lenguaje de programación JavaScript. Una de las características clave que se han valorado en este proyecto es maximizar la compatibilidad con toda clase de dispositivos, un objetivo que se puede lograr sin dificultad con JavaScript, ya que todos los navegadores web son capaces de interpretar código JavaScript de manera nativa. Además de su alta compatibilidad, JavaScript permite el envío y recepción de mensajes a través de protocolos TCP/IP en tiempos real y de manera asincrona, una característica fundamental para nuestra solución.
+La herramienta principal elegida para la implementación del cliente web va a ser el lenguaje de programación \textbf{JavaScript}\cite{npm}. Una de las características clave que se han valorado en este proyecto es maximizar la compatibilidad con toda clase de dispositivos, un objetivo que se puede lograr sin dificultad con JavaScript, ya que todos los navegadores web son capaces de interpretar código JavaScript de manera nativa. Además de su alta compatibilidad, JavaScript permite el envío y recepción de mensajes a través de protocolos TCP/IP en tiempos real y de manera asincrona, una característica fundamental para nuestra solución.
  
-Durante el desarrollo del código de la aplicación se hará uso del lenguaje de programación TypeScript. TypeScript es un lenguaje construido sobre JavaScript, que implementa una serie de características adicionales que facilitarán significativamente el desarrollo de la aplicación.
+Durante el desarrollo del código de la aplicación se hará uso del lenguaje de programación \textbf{TypeScript}. TypeScript es un lenguaje construido sobre JavaScript, que implementa una serie de características adicionales que facilitarán significativamente el desarrollo de la aplicación.\cite{typescript}
 
-Una de las principales diferencias de  TypeScript sobre JavaScript es su capacidad de definir tipos de datos estáticos para las variables, parámetros y funciones del código, lo que nos permite una detección y depuración de errores mucho más rápida que JavaScript. Además, TypeScript introduce también funciones avanzadas en el lenguaje, como interfaces, tipos genéricos, y modificadores de acceso. Estas herramientas tan sólidas nos serán de gran utilidad durante el desarrollo de la estructura de datos del cliente, permitiendonos mayor control y flexibilidad sobre como definimios tipos y organizamos el código.
+Una de las principales diferencias de  TypeScript sobre JavaScript es su capacidad de definir \textbf{tipos de datos estáticos} para las variables, parámetros y funciones del código, lo que nos permite una detección y depuración de errores mucho más rápida que JavaScript. Además, TypeScript introduce también funciones avanzadas en el lenguaje, como interfaces, tipos genéricos, y modificadores de acceso. Estas herramientas tan sólidas nos serán de gran utilidad durante el desarrollo de la estructura de datos del cliente, permitiendonos mayor control y flexibilidad sobre como definimos tipos y organizamos el código.
 
 Otra gran ventaja de TypeScript es que, una vez completado el desarrollo, el código escrito en TypeScript se compila en un código JavaScript totalmente equivalente. Esto significa que podremos disfrutar de todas las ventajas de TypeScript y el resultado final seguirá siendo igual de funcional que cualquier código JavaScript, por lo que seguiremos disfrutando de la compatibilidad y la eficiencia de JavaScript.
 
 \subsection{Visual Studio Code}
  
-Como editor de código fuente usaremos el entorno de desarrollo integrado (IDE) Visual Studio Code. VS Code es un IDE de código abierto y gratuito desarrollado por Microsoft, destacado por ser altamante customizable, y por ofrecer una gran cantidad de funcionalidades que facilitarán el desarrollo del proyecto. Entre estas, las características que nos serán más relevantes son su capacidad de depurar el código, la integración nativa con el sistema de control de versiones Git, y el resaltado de código y la correción de errores en tiempo real.
+Como editor de código fuente usaremos el entorno de desarrollo integrado (IDE)\textbf{ Visual Studio Code}. VS Code es un IDE de código abierto y gratuito desarrollado por Microsoft, destacado por ser altamante customizable, y por ofrecer una gran cantidad de funcionalidades que facilitarán el desarrollo del proyecto. Entre estas, las características que nos serán más relevantes son su capacidad de depurar el código, la integración nativa con el sistema de control de versiones Git, y el resaltado de código y la correción de errores en tiempo real.
 
 Además, VS Code cuenta con una gran colección de extensiones que permiten la programación en cualquier lenguaje que requiera el proyecto. Aunque en este caso será utilizado principalmente para la programación y compilación de código TypeScript,  HTML y CSS, gracias a la extensión de LaTex WorkShop se podrá utilizar también para la redacción de la documentación del proyecto, permitiéndonos integrar el proceso de desarrollo y documentación en un solo entorno.
 
 \subsection{Empaquetado de módulos con RollUp}
  
-Otro de los objetivos principales de este proyecto es garantizar que nuestro cliente funcione como una biblioteca JavaScript y que pueda ser importado como un módulo para ser integrado en otros proyectos si cualquier otro desarrollador requiere de sus funcionalidades. Para encapsular el código del cliente junto con todos sus archivos en un único fichero de la manera más óptima posible, requeriremos de un "bundler", o empaquetador que automatizar el proceso. Además, un empaquetador nos permitirá exportar nuestro código en diferentes formatos de módulo, facilitando su uso en diferentes patrones de diseño y sistemas de módulos de JavaScript, como ECMAScript Modules (ESM), CommonJS (CJS) o Immediately Invoked Function Expression (IIFE).
+Otro de los objetivos principales de este proyecto es garantizar que nuestro cliente \textbf{funcione como una biblioteca JavaScript} y que pueda ser \textbf{exportado como un módulo} para ser integrado en otros proyectos si cualquier otro desarrollador requiere de sus funcionalidades. Para encapsular el código del cliente junto con todos sus archivos en un único fichero de la manera más óptima posible, requeriremos de un "\textit{bundler}", o empaquetador que automatizar el proceso. Además, un empaquetador nos permitirá exportar nuestro código en diferentes formatos de módulo, facilitando su uso en diferentes patrones de diseño y sistemas de módulos de JavaScript, como ECMAScript Modules (ESM), CommonJS (CJS) o Immediately Invoked Function Expression (IIFE).
  
-Para este proyecto se ha decidido usar Rollup, una aplicacion de empaquetado caracterizada por su optimización en la creación y agrupación de bibliotecas. Rollup es especialmente eficiente en la eliminación de código no utilizado (técnica conocida como "tree-shaking", o eliminación de código muerto) lo que le permite generar archivos más ligeros y de mayor rendimiento.
+Para este proyecto se ha decidido usar \textbf{Rollup}, una aplicacion de empaquetado caracterizada por su optimización en la creación y agrupación de bibliotecas. Rollup es especialmente eficiente en la eliminación de código no utilizado (técnica conocida como "tree-shaking", o eliminación de código muerto) lo que le permite generar archivos más ligeros y de mayor rendimiento.
  
-Otros programas de empaquetado que se han considerado como alternativas son webpack y Rollup. 
+Otros programas de empaquetado que se han considerado como alternativas son Webpack y Parcel. 
 
 Webpack es una herramienta mucho más potente que Rollup, capaz de empaquetar no solo código JS, sino también CSS, imágenes y otros tipos de archivoss. Esto lo hace una solución mucho más adecuada para aplicaciones grandes y complejas, superando excesivamente las necesidades específicasde este proyecto.
 
-Paor otro lado, Parcel destaca por su configuración mínima y su rapidez y eficiencia en el empaquetado. Es apto para proyecto pequeños a medianos y muy sencillo de desplegar, pero ofrece menos opciones de personalización y soporte de módulos en comparación con Rollup, por lo que se considera una opción inferior para este proyecto en particular.
+Por otro lado, Parcel destaca por su configuración mínima y su rapidez y eficiencia en el empaquetado. Es apto para proyecto pequeños a medianos y muy sencillo de desplegar, pero ofrece menos opciones de personalización y soporte de módulos en comparación con Rollup, por lo que se considera una opción inferior para este proyecto en particular.
  
 \subsection{Interfaz gráfica con HTML y CSS}
 
-Para el desarrollo de la interfaz gráfica del cliente, se ha barajado la posibilidad de utilizar un framework front-end como Angular, React, o Vue.js, los cuales son ampliamente utilizados en el dearrollo de aplicaciones web por su capacidad para crear aplicaciones dinámicas de manera eficiente.
+Para el desarrollo de la interfaz gráfica del cliente, se ha barajado la posibilidad de utilizar un framework front-end como Angular\cite{angular}, React\cite{react}, o Vue.js\cite{vue}, los cuales son ampliamente utilizados en el dearrollo de aplicaciones web por su capacidad para crear aplicaciones dinámicas de manera eficiente.
 
-Sin embargo, tras discutir esta posibilidad con el cliente, se dedició optar por una solución diferente. Se valoró especialmente la simplicidad y disponibilidad del producto, con el objetivo de asegurar su compatibilidad con toda clase de dispositivos. Por ello, se  concluyó que lo más adecuado es desarrollar la aplicación utilizando JavaScript puro, sin la incorporación de ningún framework adicional. 
+Sin embargo, tras discutir esta posibilidad con el cliente, se dedició optar por una solución diferente. Se valoró especialmente la simplicidad y disponibilidad del producto, con el objetivo de asegurar su compatibilidad con toda clase de dispositivos. Por ello, se  concluyó que lo más adecuado es desarrollar la aplicación utilizando \textbf{JavaScript puro, sin la incorporación de ningún framework adicional}. 
 
 Esta decisión permitirá crear una interfaz lo más ligera y sencilla posible, minimizando los problemas de compatibilidad al integrarse en cualquier otro tipo de página existente sin problemas de compatibilidad, y ofreciendo un diseño eficiente y fácilmente adaptable a las necesidades específicas del usuario si fuese necesario.
 
 \subsection{Control de versiones con Git} 
 
-Para el control de versiones del proyecto se ha decidido hacer uso de GitHub. Esta elección se basa en la amplia experiencia previa con la herramienta, así como en las numerosas funcionalidades que ofrece, las cuales se adaptan perfectamente a las necesidades del proyecto. 
+Para el control de versiones del proyecto se ha decidido hacer uso de \textbf{GitHub}. Esta elección se basa en la amplia experiencia previa con la herramienta, así como en las numerosas funcionalidades que ofrece, las cuales se adaptan perfectamente a las necesidades del proyecto. 
 
-Se ha creado un repositorio en GitHub desde el inicio del proyecto, en el que cual se irá publicado y actualizando el proyecto de manera continua. Para mantener haremos uso de la herramienta de ramas, dedicando su propia rama independiente a cada nueva funcionalidad que implementemos. Estas ramas serán fusionadas con las principal una vez garantizado su correcto funcionamiento.
+Se ha creado \href{https://github.com/Pabluwu707/TFG-UGR}{un repositorio en GitHub} desde el inicio del proyecto, en el que cual se irá publicado y actualizando el proyecto de manera continua. Para mantener haremos uso de la herramienta de ramas, dedicando su propia rama independiente a cada nueva funcionalidad que implementemos. Estas ramas serán fusionadas con las principal una vez garantizado su correcto funcionamiento.
 
 \subsection{Gestión de historias de usuario con Notion}
 
-%Completar 
+Se hará uso de \textbf{Notion}\cite{notion} para la gestión de las historias de usuario. Notion se ha seleccionado por su interfaz sencilla y fácilmente adaptable, además de ser una herramienta multiusos con una gran variedad de funcionalidades aparte de gestión de tareas, como toma de notas, calendario, y base de datos.
+
+Aunque se consideraron otras alternativas como Jira\cite{jira}, estas están orientadas para la gestión de equipos de desarrollo con mútiples integrantes y roles, siendo más compleja para un proyecto realizado en individual como este. En comparación, Notion será una herramienta mucho más fácil de manejar.
  
 \section{Historias de usuario}
 
-Se establecen a continuación las historias de usuario generadas en función de los requisitos del proyecto establecidos. Primero, definimos los dos perfiles de usuario que aparecerán en nuestras historias:
+Se establecen a continuación las \textbf{historias de usuario} generadas en función de los requisitos del proyecto establecidos. Primero, definimos los dos \textbf{perfiles de usuario} que aparecerán en nuestras historias:
 
 \begin{itemize}
 	\item \textbf{Desarrollador:} Perfil que representa al usuario desarrollador que busca integrar y hacer uso de la biblioteca web en su propia aplicación. Posee conocimientos avanzados de programación web en JavaScript, y puede o no tener experiencia con el uso del protocolo INDIGO. Interactua con la biblioteca a través del código durante el proceso de desarrollo, con el objetivo de usar sus funcionalidades para manejar dispositivos astronómicos en su proyecto.
 	\item \textbf{Usuario:} Perfil que representa al astrónomo promedio, que hará uso de la aplicación mediante la intergaz gráfica web para gestionar sus dispositivos astronómicos. Aunque tiene conocimiento sobre el material astronómico involucrado, pero no se espera que tenga experiencia en programación ni en el protocolo de mensajes INDIGO. Su interacción con el sistema se limita al uso de la interfaz a través de un dispositivo con navegador web, como un ordenador o dispositivo móvil.
 \end{itemize}
  
-Como podemos ver, hay una clara distinción entre el perfil de usuario promedio y el de desarrollador. Mientras que el usuario promedio interactúa exclusivamente con la interfaz de la aplicación, el desarrollador lo hace a través del código y la programación, por lo que las historias relacionadas con este estarán mucho más especializadas en torno a ese contexto de entorno de desarrollo. 
+Como podemos ver, \textbf{hay una clara distinción entre el perfil de usuario promedio y el de desarrollador}. Mientras que el usuario promedio interactúa exclusivamente con la interfaz de la aplicación, el desarrollador lo hace a través del código y la programación, por lo que las historias relacionadas con este estarán mucho más especializadas en torno a ese contexto de entorno de desarrollo. 
 
 \subsection{INDIGO-1: Biblioteca JavaScript}
 
@@ -198,7 +200,7 @@ Es de extrema importancia señalar que, por la naturaleza del proyecto, las func
 
 \subsection{Fases del proyecto
 }
-Se realizó una estimación inicial de las distintas fases que compondrían el proyecto, asignando a cada una sus determinados objetivos, hitos e historias de usuario. A continuación se detallan las fases del proyecto:
+Se realizó una estimación inicial de las distintas \textbf{fases} que compondrían el proyecto, asignando a cada una sus determinados objetivos, hitos e historias de usuario. A continuación se detallan las fases del proyecto:
 
 \begin{itemize}
 	\item \textbf{1a fase - Metodologías de desarrollo}
@@ -257,7 +259,7 @@ Se realizó una estimación inicial de las distintas fases que compondrían el p
 \end{itemize}
 
 
-Establecidas las fases de nuestro proyecto, estos son los plazos temporales inicialmente establecidos para cada fase, con la consideración de que el proyecto se planificó inicialmente con junio de 2024 como la fecha de finalización del proyecto:
+Establecidas las fases de nuestro proyecto, estos son los \textbf{plazos temporales} inicialmente establecidos para cada fase, con la consideración de que el proyecto se planificó inicialmente con junio de 2024 como la fecha de finalización del proyecto:
 
 \begin{enumerate}
 	\item \textbf{Metodologías de desarrollo:} 10 de diciembre - 17 de diciembre de 2023
@@ -272,15 +274,15 @@ Establecidas las fases de nuestro proyecto, estos son los plazos temporales inic
 \end{enumerate}
 
 
-Estas fases con sus plazos quedaron representadas y organizadas en el siguiente diagrama de Gannt:
+Estas fases con sus plazos quedaron representadas y organizadas en el siguiente \textbf{diagrama de Gannt}:
 
 %IMAGEN GANTT
-
-%\begin{figure}[h]
-%	\centering
-%	\includegraphics[scale=0.35]{img/gantt\ sprints.png}
-%	\caption{Diagrama de Gantt de las etapas del proyecto en la planificación final}
-%\end{figure}
+\begin{figure}[h]
+	\centering
+	\hspace*{-2.3cm}  
+	\includegraphics[scale=0.32]{img/gantt.png}
+	\caption{Diagrama de Gantt con las fases del proyecto}
+\end{figure}
 
 
 \subsection{Asignación de historias de usuario por fase de desarrollo}
@@ -385,11 +387,36 @@ Estas fases con sus plazos quedaron representadas y organizadas en el siguiente 
 	\textbf{Prioridad:} Baja
 	\item \textbf{INDIGO.2.14 }Como usuario, quiero que las propiedades se eliminen automáticamente del cliente al ser eliminadas del servidor.
 	
-	\textbf{Prioridad:} Muy Baja
+	\textbf{Prioridad:} Baja
 	\item \textbf{INDIGO.2.15 }Como usuario, quiero poder programar cambios en los valores de las propiedades para que se ejecuten a horas especificas.
+	
+	\textbf{Prioridad:} Muy Baja
+	\item \textbf{INDIGO.2.16 }Como usuario, quiero poder visualizar una lista de los cambios e instrucciones programados.
 	
 	\textbf{Prioridad:} Muy Baja
 \end{itemize}
 
 
 \section{Presupuesto}
+
+Una vez establecida la planificación por fases y la temporización inicial del proyecto, ya es posible hacer una estimación de las horas de trabajo que se dedicarán al mismo y, con ello, calcular un \textbf{presupuesto preliminar} para nuestra solución.
+
+Para determinar el presupuesto, se ha tomado como referencia el \textbf{salario promedio de un ingeniero informático junior con entre 0 y 1 año de experiencia}, según las opiniones de usuarios en Glassdoor\cite{glassdoor}. Este salario oscila entre 20.000 y 26.000 euros anuales. Para nuestros cálculos, se ha tomado la media, quedando en \textbf{23.000 euros al año}, o \textbf{11,06 euros por hora}.
+
+Dado que la duración prevista del proyecto es de 16 semanas, lo representaremos como \textbf{4 meses de trabajo}, en las que se engloba investigación, desarrollo y despliegue.
+
+Adicionalmente, se ha considerado el coste del equipo utilizado en el desarrollo del proyecto. Este se ha llevado a cabo en un \textbf{ordenador portátil Medion Erazer P675}, cuyo valor es de \textbf{892,45 euros}\cite{medion}. Se asume que los dispositivos astronómicos sobre los que se realizarán las pruebas serán provistos por el cliente y no supondrán ningún coste.
+
+Con toda esta información, se puede realizar la siguiente estimación del coste total del proyecto:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Concepto}                         & \textbf{Cantidad} & \textbf{Coste} 							\\ \hline
+Salario mensual: ingeniero junior      &  1         		  &        7.668 € (1917 euro/mes, 4 meses)    \\ \hline
+Material: Medion Erazer P675   & 1 				  &          892,45 €       					\\ \hline
+Coste total del proyecto         		  &          -         & \textbf{8.560,45 €} 						\\ \hline
+\end{tabular}
+\caption{Estimación del presupuesto del proyecto}
+\end{table}

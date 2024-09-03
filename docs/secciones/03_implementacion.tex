@@ -17,7 +17,7 @@ Los protocolos de comunicación que se han investigado, especialmente el protoco
 	\centering
 	\vspace{0.5mm}
 	\includegraphics[scale=0.35]{img/arquitectura-client-server.png}
-	\caption{Diagrama de arquitectura, se puede apreciar fácilmente la estructura cliente-servidor.}
+	\caption{Diagrama de arquitectura cliente-servidor INDIGO.}
 \end{figure}
 
 La biblioteca de INDIGO nos proporciona una implementación del servidor ya lista para su despliegue a través de la herramienta de línea de comando INDIGO Server. Este servidor es altamente extensible y soporta una gran cantidad de drivers, lo que permitirá centralizar el control de múltiples dispositivos astronómicos distribuidos de manera simultánea. Este servidor será un componente clave alrededor del cual diseñaremos nuestra aplicación. 
@@ -227,4 +227,187 @@ Además, aparte de las historias de usuario implementadas, se han realizado camb
 
 \subsection{Pruebas}
 
+Haciendo uso de las funciones de solicitud de propiedades y de los diversos simuladores proporcionados por INDIGO Server, se han llevado a cabo una serie de pruebas exhaustivas para verificar que los datos se introducen correctamente en la nueva estructura de datos con Dispositivos.
+
+A traves de estas pruebas, se comprueba que el cliente ya es capaz de interpretar adecuadamente los diferentes tipos de mensajes que el servidor puede enviar, respondiendo según los requisitos que hemos establecido.
+
+Una vez realizadas estas comprobaciones, se ha utilizado la herramienta Rollup para empaquetar todas las clases del cliente en un único archivo JavaScript. Tras verificar que todas las funcionalidades del cliente se preservan correctamente tras el empaquetado, se decide utilizar este archivo comprimido como la base para el desarrollo de la interfaz gráfica. 
+
+\newpage
+
+\section{Fase 7 - Sprint 3}
+
+\subsection{Análisis}
+
+\begin{itemize}[leftmargin=10mm]
+	\item \textbf{INDIGO.2.1 }Como usuario, quiero que la aplicación establezca una conexión con un servidor INDIGO a través de la red.
+	
+	\textbf{Prioridad:} Muy Alta
+	\item \textbf{INDIGO.2.2 }Como usuario, quiero que la aplicación haga uso de la biblioteca cliente INDIGOScript.
+	
+	\textbf{Prioridad:} Muy Alta
+	\item \textbf{INDIGO.2.3 }Como usuario, quiero que la aplicación me muestre un listado de todos los dispositivos conectados al servidor y sus propiedades.
+	
+	\textbf{Prioridad:} Muy Alta
+	\item \textbf{INDIGO.2.4 }Como usuario, quiero que los valores almacenados en la aplicación se modifiquen automáticamente al recibir nuevos datos del servidor.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.5 }Como usuario, quiero poder visualizar los elementos de una propiedad tipo Text.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.7 }Como usuario, quiero poder visualizar los elementos de una propiedad tipo Number.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.9 }Como usuario, quiero poder visualizar los elementos de una propiedad tipo Switch.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.11 }Como usuario, quiero poder visualizar los elementos de una propiedad tipo Light.
+	
+	\textbf{Prioridad:} Media
+	\item \textbf{INDIGO.2.12 }Como usuario, quiero poder visualizar los elementos de una propiedad tipo BLOB.
+	
+	\textbf{Prioridad:} Media
+\end{itemize}
+
+Durante la tercera iteración, el desarrollo se centrará en la implementación de una clase JavaScript destinada a gestionar la interfaz gráfica de la aplicación, haciendo uso de la biblioteca del cliente previamente desarrollada. Esta nueva clase deberá ser capaz de injectar elemetos del DOM en el navegador web, a través de los cuales el usuario podrá acceder a todas las funcionales del cliente de manera intuitiva.
+
+\subsection{Diseño}
+
+Se ha diseñado el siguiente esquema de clase para planificar la clase de la interfaz web. Se simplifican las clases que componen el cliente INDIGO en un único fichero para mayor legibilidad:
+
+%IMAGEN ESQUEMA ARQUITECTURA CLIENTE- Cliente JavaScript
+\begin{figure}[h]
+	\centering
+	\hspace*{-2cm}   
+	\includegraphics[scale=0.50]{img/diseño-sprint3.png}
+	\caption{Esquema de clase diseñado para el sprint 3.}
+\end{figure}
+
+
+
+\subsection{Implementación}
+
+\begin{itemize}[leftmargin=10mm]
+	\item \textbf{INDIGO.2.1 Como usuario, quiero que la aplicación establezca una conexión con un servidor INDIGO a través de la red.}\\
+	\textbf{INDIGO.2.2 Como usuario, quiero que la aplicación haga uso de la biblioteca cliente INDIGOScript}.
+	
+	Haciendo uso de la biblioteca de cliente, se ha declarado una variable 'indigoClient' en la nueva clase. Esta variable será inicializada junto con la clase de interfaz gráfica a través de la función 'setupClient()', y permitirá acceder a todas las funcionalidades y datos del cliente en todo momento.
+	Se plantea la necesidad de establecer un sistema para que el cliente pueda notificar los cambios entrantes a la interfaz gráfica y a otras clases que observen.
+	
+	\item \textbf{INDIGO.2.3 Como usuario, quiero que la aplicación me muestre un listado de todos los dispositivos conectados al servidor y sus propiedades.}
+	Hemos implementado una serie de funciones para hacer posible la implementación de una interfaz gráfica en cualquier página web. Se han creado las funciones 'createBaseTable()', 'createDevice()', 'createPropertyDOM()' y 'createPropertyItemDOM()', que permitirán la creación programática de elementos de DOM para insertar en nuestra interfaz gráfica. En estos elementos se mostrará al usuario los valores de las propiedades.
+	
+	\item \textbf{INDIGO.2.5 Como usuario, quiero poder visualizar los elementos de una propiedad tipo Text.}\\
+	\textbf{INDIGO.2.7 Como usuario, quiero poder visualizar los elementos de una propiedad tipo Number.}\\
+	\textbf{INDIGO.2.9 Como usuario, quiero poder visualizar los elementos de una propiedad tipo Switch.}\\
+	\textbf{INDIGO.2.11 Como usuario, quiero poder visualizar los elementos de una propiedad tipo Light.}\\
+	\textbf{INDIGO.2.12 Como usuario, quiero poder visualizar los elementos de una propiedad tipo BLOB.}\\
+	Tomando como base las funciones de creación de DOM anteriormente propuestas, en particular la función 'createPropertyItemDOM()', se han creado funciones específicas para la creación programática de estos elementos, junto con sus valores.
+	
+	
+	\item \textbf{INDIGO.2.4 Como usuario, quiero que los valores almacenados en la aplicación se modifiquen automáticamente al recibir nuevos datos del servidor.}
+	 Para que sea posible recibir actualizaciones del estado del cliente, el cliente debe estar al tanto de las aplicaciones que lo están monitorizando. Esto se ha logrado haciendo uso de del patrón de diseño Observador. 
+	 Se ha definido en el cliente una lista de observadores, denominada 'Observers[]', en la cual se irá introduciendo referencias a todas las aplicaciones que desean subcribirse a los eventos del cliente. Cada vez que se reciban novedades de cambios en los dispositivos del servidor, el cliente invocará la función 'notifyChange(indigoData)' en cada uno de los observadores, enviándoles una copia de los datos recibidos. De esta manera, la interfaz gráfica del usuario será notificada cada vez que se produzca un cambio en el cliente, lo que permitirá actualizar los valores mostrados en tiempo real. 
+	
+\end{itemize}
+
+\subsection{Pruebas}
+
+Con las funcionalidades que se han implementado en esta iteración, ya se puede imprimir una versión un tanto primitiva de nuestra interfaz gráfica, que mostrará los datos del cliente y sus modificaciones en tiempo real. 
+
+También se ha puesto a prueba la función 'notifyChanges()' que se ha implementado en el cliente para notificar a observadores de los cambios entrantes, y se ha garantizado el correcto funcionamiento y traspaso de información con uno y con varios observadores simultáneos.
+
+\newpage
+
+\section{Fase 8 - Sprint 4}
+
+\subsection{Análisis}
+
+\begin{itemize}[leftmargin=10mm]
+	\item \textbf{INDIGO.2.6 }Como usuario, quiero poder modificar los valores de una propiedad tipo Text.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.8 }Como usuario, quiero poder modificar los valores de una propiedad tipo Number.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.10 }Como usuario, quiero poder modificar los valores de una propiedad tipo Switch.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.13 }Como usuario, quiero que el acceso y modificación de los valores estén restringidos en función de sus permisos y estado.
+	
+	\textbf{Prioridad:} Baja
+	\item \textbf{INDIGO.2.14 }Como usuario, quiero que las propiedades se eliminen automáticamente del cliente al ser eliminadas del servidor.
+	
+	\textbf{Prioridad:} Baja
+	\item \textbf{INDIGO.2.15 }Como usuario, quiero poder programar cambios en los valores de las propiedades para que se ejecuten a horas especificas.
+	
+	\textbf{Prioridad:} Muy Baja
+	\item \textbf{INDIGO.2.16 }Como usuario, quiero poder visualizar una lista de los cambios e instrucciones programados.
+	
+	\textbf{Prioridad:} Muy Baja
+\end{itemize}
+
+La ultima iteración se destinará a implementar las últimas funcionalidades de la interfaz gráfica, la más importante de ellas la capacidad de modificar dispositivos y propiedades desde la interfaz. Se refinarán también lo implementado en previas iteraciones. Es posible que haya que que descartar algunas historias de usuario por falta de tiempo para desarrollarlas, en cuyo caso se escogerán en función de la prioridad establecida.
+
+\subsection{Diseño}
+
+Se ha diseñado el siguiente esquema de clase para planificar la aplicación web de cara a esta iteración:
+%IMAGEN ESQUEMA ARQUITECTURA CLIENTE- Cliente JavaScript
+\begin{figure}[h]
+	\centering
+	\hspace*{-2cm}   
+	\includegraphics[scale=0.50]{img/diseño-sprint4.png}
+	\caption{Esquema de clase diseñado para el sprint 4.}
+\end{figure}
+
+
+\subsection{Implementación}
+
+\begin{itemize}[leftmargin=10mm]
+	\item \textbf{INDIGO.2.6 Como usuario, quiero poder modificar los valores de una propiedad tipo Text.}\\
+	textbf{INDIGO.2.8 Como usuario, quiero poder modificar los valores de una propiedad tipo Number.}\\
+	\item \textbf{INDIGO.2.10 Como usuario, quiero poder modificar los valores de una propiedad tipo Switch.}\\
+	Se han alterado la funciones de creación de elementos DOM de propiedades para que los valores de cada propiedad se muestren en un elemento DOM 'input', modificable y sencillo. También se han añadido botones con los que confirmar los cambios, y se ha cambiado la manera en la que se representan las propiedades Switch, optando por botones conmutables que actuan como un elemento 'input' checkbox.
+	En el código, se han declarado las nuevas funciones 'updateTextProperty()' y 'updateSwitchProperty()', las cuales al ser invocadas recopilarán los datos del DOM para transmitírselos al cliente.
+	
+	\item \textbf{INDIGO.2.13 Como usuario, quiero que el acceso y modificación de los valores estén restringidos en función de sus permisos y estado.}
+	Las funciones de actualización de propiedades planteadas en la anterior historia tienen en cuenta las variables Permission y State de las propiedades, y limitan la modificación de sus valores según.
+	
+	\item \textbf{INDIGO.2.14 Como usuario, quiero que las propiedades se eliminen automáticamente del cliente al ser eliminadas del servidor.}
+	El listado de propiedades cargadas en el DOM es revisado cada vez que se produce un cambio en el cliente y este notifica a la interfaz gráfica, garantizando que las propiedades eliminadas se retiren en el momento y que los datos sean siempre los más recientes posibles.
+	
+\end{itemize}
+
+Gran parte del tiempo de implementación se ha destinado a revisar y optimizar el código ya implementado en anteriores sprints para garantizar su correcto funcionamiento y 
+
+Debido a fallos durante su implementación y a la falta de tiempo en este sprint, no se ha podido completar todas las tareas propuestas, quedando pendiente las historias \textbf{INDIGO.2.15} y \textbf{INDIGO.2.16}. 
+
+\newpage
+
+\section{Despliegue}
+
+A continuación se muestran una serie de capturas de la aplicación final en funcionamiento:
+
+\begin{figure}[h]
+	\centering
+	\hspace*{-4cm}   
+	\includegraphics[scale=0.4]{img/despliegue1.png}
+	\caption{Ejemplo de ejecución de INDIGOScript con un simulador CCD.}
+\end{figure}
+
+
+\begin{figure}[h]
+	\centering
+	\hspace*{-2.8cm}   
+	\includegraphics[scale=0.40]{img/despliegue2.png}
+	\caption{Ejemplo de uso de propiedad Switch para encender un dispositivo.}
+\end{figure}
+
+
+\begin{figure}[h]
+	\centering
+	\hspace*{-4cm}   
+	\includegraphics[scale=0.4]{img/despliegue3.png}
+	\caption{Ejemplo de mensaje de apagado siendo recibido en el servidor INDIGO.}
+\end{figure}
 

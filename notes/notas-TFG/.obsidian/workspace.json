@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Ideas y conceptos.md",
+                "file": "Enlaces.md",
                 "mode": "source",
                 "source": false
               }
@@ -154,7 +154,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Ideas y conceptos.md",
+                "file": "Enlaces.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -171,7 +171,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Ideas y conceptos.md",
+                "file": "Enlaces.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -194,7 +194,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Ideas y conceptos.md"
+                "file": "Enlaces.md"
               }
             }
           },
@@ -239,10 +239,10 @@
   },
   "active": "d9602f4f824b3455",
   "lastOpenFiles": [
+    "Ideas y conceptos.md",
     "Apuntes en sucio.md",
     "Tareas a realizar.md",
     "Historia de usuario.md",
-    "Ideas y conceptos.md",
     "Enlaces.md",
     "Dudas para tutor.md",
     "Calendario - Temporización del proyecto.md",
