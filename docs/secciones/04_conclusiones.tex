@@ -1,2 +1,41 @@
-\chapter{Conclusiones y trabajos futuros}
+\chapter{Conclusiones}
 
+\section{Trabajos futuros}
+
+La metodología planteada para este proyecto permite el añadido de nuevas iteraciones y fases de desarrollo. A continuación se exploran \textbf{posibles ideas} que se podrían expandir en caso de elegir continuar el desarrollo del proyecto en un futuro.
+
+\subsection{Implementación de las funcionalidades por terminar}
+
+Como se ha comentado en la sección de implementación del último sprint, no se pudieron completar alguno de los requisitos propuestos durante la planificación del proyecto. En particular, \textbf{queda pendiente la implementación de un sistema de programado de instrucciones} para automatizar el proceso de modificar propiedades. Esta idea se podría expandir e implementar en su propio sprint.
+
+\subsection{Creación de vistas alternativas para la interfaz}
+
+Una de las características de los clientes con interfaz gráfica como KStars o INDIGO Control Panel es la presencia de diferentes vistas con las que hacer enfoque en diferentes sets de propiedades.
+
+La estructura por elemento de DOM de la interfaz gráfica de nuestra aplicación permite que estos sean mostrados y ocultados fácilmente. Futuras iteraciones del proyecto se podrían destinar a aprovechar este sistema para crear \textbf{vistas alternativas}, o para crear un sistema que permite al usuario configurar y customizar sus propias vistas.
+
+\subsection{Gestión de usuarios y servidores}
+
+Otra funcionalidad propuesta durante el planteamiento inicial y que no se llegó a explorar fue la gestión del servidor al que conectarse a través de una interfaz de \textit{login}, para poder escoger el servidor INDIGO de manera dinámica. 
+
+
+\section{Conclusión}
+
+Uno de los mayores desafíos de este proyecto fue la familiarización con el protocolo de comunicación INDIGO, la gestión de Propiedades de dispositivos astronómicos, y el envío y recepción de mensajes, sobre todo al no poseer conocimientos previos sobre el campo de la astronomía o la astrofotografía. En ese aspecto, se puede afirmar que el trabajo realizado ha sido exitoso. Se ha logrado desarrollar un cliente completamente funcional y reutilizable, ajustado a los requisitos inicialmente planeados, con una estructura de datos claramente definida, y con alta disponibilidad. 
+
+El uso de Rollup como herramienta de empaquetado para optimizar el código también ha aportado bastante al cliente, permitiendo comprimirlo de forma eficiente y exportarlo a distintos estándares para una disponibilidad aún mayor. Por lo general, las herramientas seleccionadas para el desarrollo del proyecto han demostrado ser más que adecuadas, satisfaciendo las expectativas y proporcionando un entorno de trabajo ligero, flexible y cómodo. De entre todas ellas destaca TypeScript, que como lenguaje nos ha dado herramientas como el tipado estático que han permitido crear un cliente mucho más robusto y un código mucho más legible y fácil de interpretar.
+
+Otro aspecto exitoso de este proyecto fue la elección de la metodología. Optar por una metodología personalizada permitió aprovechar las mejores prácticas y herramientas de los métodos ágiles más populares, adaptando la planificación del proyecto a las necesidades específicas del problema desde el inicio.
+
+
+Sin embargo, no todos los aspectos del proyecto han sido tan positivos. 
+El que podria haber sido el aspecto más problemático durante el desarrollo es la significativa reajustación en la planificación temporal del proyecto. Inicialmente, se había previsto que el proyecto se completase en junio, pero debido a una interrupción en su desarrollo y su reanudación varios meses después, este no finalizó hasta septiembre. Esto provocó que se dispusiese de un tiempo considerablemente menor para las últimas iteraciones.
+
+Esto se nota sobre todo en la ausencia de la fase de Pruebas y pulido, propuesta en la temporización inicial del proyecto. Inicialmente se había considerado dedicar este periodo al desarrollo de tests unitarios con Jest, herramienta de testeo para JavaScript, para validar con certeza las funciones más vitales del proyecto, pero se tuvo que acabar descartando la idea por falta de tiempo.
+
+Las últimas iteraciones también se han visto afectadas por este cambio en la temporización. Errores inesperados durante el desarrollo de la interfaz gráfica causaron un descenso en el ritmo de trabajo, y suvarias de las funcionalidades planteadas para esta capa también tuvieron que verse descartadas o implementadas con menos soltura de lo inicialmente planificado.
+
+Afortunadamente, la metodología ágil flexible que adoptamos nos permitió retomar el desarrollo sin necesidad de reiniciar el proyecto desde cero. Aunque esta reestructuración drástica de la temporización no tuviese un impacto excesivamente negativo en el producto final, es crucial reconocer que en un entorno profesional, donde se colabora con múltiples desarrolladores y el rendimiento individual impacta directamente en los resultados del equipo, un desajuste temporal de esta magnitud podría haber graves problemas, e incluso llevar el proyecto al fracaso. Esta situación pone un foco en la gran importancia de una planificación temporal rigurosa y la necesidad de contar con estrategias de mitigación de riesgos para asegurar la continuidad del proyecto.
+
+
+El trabajar en este proyecto me ha ofrecido nuevas perspectivas y conocimientos, no solo a un nivel técnico en programación y desarrollo de aplicaciones, sino a nivel personal en como afrontar esta clase de desafíos y barreras de cara a una inminente entrada a un mundo laboral que exige bastante madurez y profesionalidad.

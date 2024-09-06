@@ -30,6 +30,8 @@ https://www.indigo-astronomy.org/hardware.html
 
 INDIGO-control-panel: Panel de control, cliente para conectarse a INDIGO Servidor. Está en GitHub, pero no viene compilado. Habría que ver que hacer con eso. Tiene paquete para apt-get.
 
+SCRUM
+
 -----
 
 

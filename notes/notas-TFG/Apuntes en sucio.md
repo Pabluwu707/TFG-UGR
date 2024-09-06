@@ -261,3 +261,72 @@ Se ha implementado una clase genérica denominada Property(), con los datos prin
 Adicionalmente, se ha creado la clase PropertyItem(), encargada de almacenar el nombre y valor de un ítem dentro de una propiedad. Esta clase también se extiende en la subclase PropertyItemNumber(), utilizada específicamente en las propiedades del tipo NumberProperty() y que permite registrar los valores adicionales de este tipo de ítems.
 
 Todas las clase definidas en esta estructura poseen un constructor que permite su creación a partir de un objeto en formato JSON. Con esta estructura declarada, en cuanto se reciba un mensaje del servidor con nuevas propiedades no tenemos más que invocar el constructor correspondiente y almacenarlo en la variable de clase indigoPorperties[], que actuará como contenedor para todas las propiedades gestionadas por el cliente.
+
+
+# Correcciones
+
+ ~~Sección de bibliografía vacía y las referencias con [?]~~
+ 
+~~Portada: Director -> Tutor~~
+
+~~El índice de tablas yo lo quitaría... para una sola que hay..~~
+
+~~1.1: "astronómicos de manera inalámbrica" -> "astronómicos de manera remota"~~
+
+~~1.1.1: codigo abierto -> código abierto~~
+
+~~Final de 1.1.1: el protocolo INDIGO. -> Añadir algo como "que se presentan en las siguientes secciones"~~
+
+~~1.1.3: desoftware -> de software~~
+
+~~R1.1.1. Se ha colado un guión al final de la línea. Creo que ha intentado guionizar el término compuesto "dispositivo/servidor"~~
+
+~~R1.1.13 y R1.1.14: Acabar las frases con .~~
+
+~~1.3.1.2. La numeración de los requisitos de la interfaz grafíca es rara. Empiezan por el 2.11 y luego por el 2.20.~~
+
+~~1.4.2. Me extraña que aquí no esté PDOO~~
+
+~~ultimo paŕrafo de 2.2.3: Paor otro lado -> Por otro lado~~
+
+~~Para cada una de las herramientas usadas se puede usar una entrada bibliográfica con la URL. Cuando hables de scrum, extreme programming, etc tb. O por ejemplo cuando hables de "historias de usuario", puedes poner una referencia donde se hable de las mismas. Tb cuando hables de ASCOM, INDI, INDIGO... Es importante que haya una cierta bibliografia.~~
+
+~~historia de usuario INDIGO.1.3. "... conexión." -> "... conexión WS."~~
+
+~~Presupuesto. No metas el ordenador entero. Di que la vida del ordenador van a ser X meses (2 o 3 años) y que como solo se usa durante 4, pues el gasto en ordenador es lo que salga.~~
+
+~~3.1.2 : preliminal -> preliminar (varias veces)~~
+
+~~4.1. Roll-up -> Anteriormente lo has usado como Rollup. O lo uno o lo otro.~~
+
+~~No has mencionado en el apartado de INDIGO que aparte de XML puede usar JSON como protocolo de comunicación, que para algunos lenguajes (como Javacript) es mucho más conveniente. Lo mencionas mucho después. Pero es importante que antes sesepa que funciona con JSON puesto que se menciona en las historias de usuario o en los requisitos.~~
+
+~~2.4 No debe haber secciones "vacias". Entre 2.4 y 2.4.1 debería haber una frasecita diciendo lo que se va a ver en esa sección o sigueintes subsecciones. De hecho lo mismo puedes quitar la ultima frase del párrafo que precede al 2.4 para ponerlo ahi o algo similar.~~
+
+~~figura 2.1: ponla a todo el ancho que de la página, que se vea mejor~~
+~~3.1.1. Poner una frasecita o algo entre esa y sus subsecciones~~
+
+~~Cuando pongas cosillas de codigo como~~
+	~~sendGetPropertiesMessage(protocolVersion,~~
+	~~deviceName? string, propertyName?: string~~
+~~ponlo con una fuente de ancho fijo. en latex, puedes usar \texttt{...}~~
+~~Mucho mejor que ponerlo entrecomillado como veo que pones cuando hablas de los distintos sprints~~
+
+~~Las secciones de pruebas son muy escasas. Ahi debería haber algunos ejemplos concretos de alguna prueba. Algo en lo que digas~~
+	~~Nombre de la prueba: Comprobar que tal y cual~~
+	~~Requisitos previos: El servidor debe estar conectado y no se quede~~
+	~~Resultado esperado: El servidor debe tal y pascual cuando le enviemos el mensaje tal~~
+	~~Resultado real de la prueba: no ha funcionado. Ha ocurrido esto~~
+	~~Investigación y resolución: pasaba esto y he hecho esto para arreglarlo.~~
+~~No hace afalta poner TODAS las miles de pruebas que has hecho, pero está claro que hay que poner algunos ejemplos.
+
+~~Sección 2.4.1: Se repite muchísimo con lo anterior. Quizás sería mejor hacer una especie de tabla en donde solo se indiquen los codigos de las hisotrias por cada iteración.~~
+
+~~Capitulo 4: No hacer una subsección 4.1. Si solo hay una subseccion, que se quede todo como capitulo 4. Otra cosa es que hagas un 4.1 Conclusiones y un 4.2 trabajos futuros (mucho mejor que "aspectos a mejorar")~~
+
+Te mando firma para añadirla a la página correspondiente mia.
+
+---
+
+
+No has hablado nada por ejemplo del diseño de la interfaz web. Directamente pones al final algunos pantallazos de como ha quedado, pero hubiera estado bien ver que se ha pensado un poco como debería quedar.

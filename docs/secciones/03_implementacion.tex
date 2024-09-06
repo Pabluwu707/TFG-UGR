@@ -10,19 +10,19 @@ Durante las primeras fases del proyecto, el principal enfoque ha sido planificar
 
 \subsubsection{Arquitectura cliente-servidor}
 
-Los protocolos de comunicación que se han investigado, especialmente el protocolo INDIGO, están diseñados en torno a una arquitectura cliente-servidor. Consecuentemente, nuestro proyecto tomará esta misma estructura.
+Los protocolos de comunicación que se han investigado, especialmente el protocolo INDIGO, están diseñados en torno a una \textbf{arquitectura cliente-servidor}. Consecuentemente, nuestro proyecto tomará esta misma estructura.
 
 %IMAGEN ESQUEMA ARQUITECTURA CLIENTE-SERVIDOR INDIGO
 \begin{figure}[h]
 	\centering
 	\vspace{0.5mm}
 	\includegraphics[scale=0.35]{img/arquitectura-client-server.png}
-	\caption{Diagrama de arquitectura, se puede apreciar fácilmente la estructura cliente-servidor.}
+	\caption{Diagrama de arquitectura cliente-servidor INDIGO.}
 \end{figure}
 
-La biblioteca de INDIGO nos proporciona una implementación del servidor ya lista para su despliegue a través de la herramienta de línea de comando INDIGO Server. Este servidor es altamente extensible y soporta una gran cantidad de drivers, lo que permitirá centralizar el control de múltiples dispositivos astronómicos distribuidos de manera simultánea. Este servidor será un componente clave alrededor del cual diseñaremos nuestra aplicación. 
+La biblioteca de INDIGO nos proporciona una implementación del servidor ya lista para su despliegue a través de la herramienta de línea de comando \textbf{INDIGO Server}. Este servidor es altamente extensible y soporta una gran cantidad de \textit{drivers}, lo que permitirá centralizar el control de múltiples dispositivos astronómicos distribuidos de manera simultánea. Este servidor será un componente clave alrededor del cual diseñaremos nuestra aplicación. 
 
-El servidor INDIGO hace uso de sus drivers y agentes para interpretar los parámetros de cada dispositivo astronómico y traducirlos en Propiedades, vectores de uno o más variables con nombre a través de las cuales se pueden controlar los parámetros del dispositivo.
+El servidor INDIGO hace uso de sus \textit{drivers} y agentes para interpretar los parámetros de cada dispositivo astronómico y traducirlos en Propiedades, vectores de uno o más variables con nombre a través de las cuales se pueden controlar los parámetros del dispositivo.
 
 INDIGO soporta 5 tipos de Propiedades:
 \begin{itemize}
@@ -33,8 +33,9 @@ INDIGO soporta 5 tipos de Propiedades:
 	\item BLOB: para manejar objetos binarios grandes, como imágenes o archivos de datos.
 \end{itemize}
 
-Originalmente, INDIGO transmite estas Propiedades a través de mensajes XML, pero también ofrece la posibilidad de usar un protocolo basado en JSON, lo cual nos será mucho más práctico para nuestra aplicación web. Se hará uso de WebSockets para la transmisión de estas Propiedades entre nuestro cliente web y el servidor de INDIGO.
+Originalmente, INDIGO transmite estas Propiedades a través de mensajes XML, pero también ofrece la posibilidad de usar un protocolo basado en JSON, lo cual nos será mucho más práctico para nuestra aplicación web. Se hará uso de WebSocket para la transmisión de estas Propiedades entre nuestro cliente web y el servidor de INDIGO.
 
+\newpage
 
 \subsubsection{Arquitectura del cliente}
 
@@ -51,20 +52,58 @@ Este diseño de estructura se basa parcialmente en el patrón de diseño Modelo-
 
 En primer lugar, se plantea una capa primaria, el Cliente INDIGO. Esta capa estará compuesta por una clase en JavaScript que actuará como el Controlador de la aplicación. Este controlador será responsable de gestionar e interpretar los mensajes recibidos del servidor INDIGO, y coordinar la comunicación entre la interfaz de usuario y la estructura de datos. La estructura de datos en esta capa actuará como el Modelo, almacenando y gestionando de manera local los datos de las Propiedades.
 
-En segundo lugar, se plantea una capa adicional, la Vista del cliente INDIGO, que asumirá el rol de Vista en el patrón MVC. Esta capa consistirá una clase en JavaScript cuya principal funcionalidad será la de inyectar elementos del DOM en el navegador, los cuales actuarán como interfaz gráfica de la aplicación, y permitiran una visualización de los datos en tiempo real.
+En segundo lugar, se plantea una capa adicional, la Vista del cliente INDIGO, que asumirá el rol de Vista en el patrón MVC. Esta capa consistirá una clase en JavaScript cuya principal funcionalidad será la de inyectar elementos del DOM en el navegador, los cuales actuarán como interfaz gráfica de la aplicación, y permitirán una visualización de los datos en tiempo real.
 
 Adicionalmente, se ha implementado el patrón Observador para gestionar el flujo de información entre la Interfaz Gráfica y el Cliente INDIGO. Este patrón permite que el Cliente notifique de manera automática a la Interfaz Gráfica según se reciban cambios en el Servidor, garantizando una interacción fluida entre los elementos de la aplicación.
 
+\newpage
+
+\subsection{Diseño de wireframes}
+
+Se ha realizado un diseño de wireframes para visualizar como podría ser la interfaz web de nuestra aplicación web. Se han diseñado vistas para cada tipo de propiedad de dispositivo y para la programación temporal de cambios:
+
+%IMAGEN WIREFRAMES
+\begin{figure}[h]
+	\centering
+	\hspace*{-4cm}   
+	\includegraphics[scale=0.48]{img/wireframe-devices.png}
+	\caption{Wireframe de la vista de dispositivos, propiedades Text y Switch.}
+\end{figure}
+\clearpage
+
+\begin{figure}[h]
+	\centering
+	\hspace*{-2.6cm}   
+	\includegraphics[scale=0.48]{img/wireframe-devices2.png}
+	\caption{Wireframe de la vista de dispositivos, propiedades Number y Light.}
+\end{figure}
+\clearpage
+
+\begin{figure}[h]
+	\centering
+	\hspace*{-4cm}   
+	\includegraphics[scale=0.48]{img/wireframe-blob.png}
+	\caption{Wireframe de la vista de dispositivos, posible vista alternativa para BLOBs.}
+\end{figure}
+\clearpage
+
+
+\begin{figure}[h]
+	\centering
+	\hspace*{-2.6cm} 
+	\includegraphics[scale=0.48]{img/wireframe-programar.png}
+	\caption{Wireframe de la vista de programación de cambios.}
+\end{figure}
+\clearpage
+
+
+\newpage
+\newpage
+\newpage
+
 \subsection{Implementación}
 
-En estas fases iniciales, el enfoque principal ha sido el diseño preliminal de la aplicación, por lo que aún no se ha llevado a cabo ninguna implementación concreta. Se ha realizado una exhaustiva preparación de todas las herramientas que se utilizarán a lo largo del proyecto. Esto incluye la instalación de las bibliotecas INDIGO y de las herramientas gráficas (GUI) que estas ofrecen.
-
-Asimismo, se ha creado un proyecto en TypeScript que servirá como base para todo el código que se desarrollará en el futuro. Se ha configurado el entorno de desarrollo integrado (IDE) Visual Studio Code para permitir la compilación automática de TypeScript a JavaScript, optimizando así el flujo de trabajo. Además, se ha incorporado la herramienta de empaquetado Rollup al proyecto, realizándose una serie de pruebas para garantizar su correcto funcionamiento.
-
-Por último, se ha inicializado un repositorio en GitHub, que actualmente es privado, para gestionar el control de versiones del proyecto. Este repositorio será el espacio donde se alojará y se documentará todo el código fuente a medida que avance el desarrollo, asegurando así un seguimiento riguroso de las versiones y cambios realizados.
-
-
-En estas fases iniciales, el enfoque principal ha sido el diseño preliminal de la aplicación, y por tanto aún no se ha llevado a cabo ninguna implementación de código destinado al proyecto. En su lugar, se han preparado y puesto a punto todas las herramientas que serán utilizadas a lo largo del proyecto. Esto incluye la instalación de la biblioteca INDIGO, el servidor INDIGO y de las herramientas gráficas que ofrece.
+En estas fases iniciales, el enfoque principal ha sido el diseño preliminar de la aplicación, y por tanto aún no se ha llevado a cabo ninguna implementación de código destinado al proyecto. En su lugar, se han preparado y puesto a punto todas las herramientas que serán utilizadas a lo largo del proyecto. Esto incluye la instalación de la biblioteca INDIGO, el servidor INDIGO y de las herramientas gráficas que ofrece.
 
 Se ha creado un proyecto en TypeScript que servirá como base para todo el código que se desarrollará en el futuro, y se ha configurado Visual Studio Code para permitir la compilación automática de TypeScript a JavaScript, para facilitar el desarrollo y hacerlo más cómodo. Además, se ha incorporado la herramienta de empaquetado Rollup al proyecto, y se han realizado una serie de pruebas para asegurar su correcto funcionamiento.
 
@@ -72,18 +111,20 @@ Por último se ha inicializado el repositorio en GitHub, actualmente privado, pa
 
 \subsection{Pruebas}
 
-Se han realizado las pruebas pertinentes para asegurar el correcto funcionamiento de las herramientas recién instaladas. 
+Se han realizado las pruebas pertinentes para asegurar la correcta instalación y funcionamiento de las herramientas recién instaladas. 
 
 \newpage
 
 \section{Fase 5 - Sprint 1}
+
+Con esta iteración, comienza la implementación de la aplicación. A continuación se detallan las etapas de este sprint.
 
 \subsection{Análisis}
 
 Las historias introducidas en el Product Backlog de este sprint son las siguientes:
 
 \begin{itemize}[leftmargin=10mm]
-	\item \textbf{INDIGO.1.1  }Como desarrollador, quiero establecer una conexión con el servidor INDIGO haciendo uso del protocolo WebSocket
+	\item \textbf{INDIGO.1.1  }Como desarrollador, quiero establecer una conexión con el servidor INDIGO haciendo uso del protocolo WebSocket.
 	
 	\textbf{Prioridad:} Muy Alta
 	\item \textbf{INDIGO.1.3  }Como desarrollador, quiero recibir mensajes del servidor en tiempo real a través de la conexión.
@@ -127,41 +168,75 @@ Se ha diseñado el siguiente esquema de clase para planificar la clase del clien
 Se implementan las historias de usuario de la siguiente manera:
 
 \begin{itemize}[leftmargin=10mm]
-	\item \textbf{INDIGO.1.1  Como desarrollador, quiero establecer una conexión con el servidor INDIGO haciendo uso del protocolo WebSocket.}\\
-	\textbf{INDIGO.1.3  Como desarrollador, quiero recibir mensajes del servidor en tiempo real a través de la conexión.}
+	\item \textbf{INDIGO.1.1}
 	
-	Se han declarado variables de clase para almacenar la dirección del host y el puerto al que conectarse, y se ha creado una función 'connect()'. Esta función genera un objeto WebSocket haciendo uso de los datos almacenados para abrir una conexión con el servidor, y establece una serie de \textit{Event Listeners} que manejarán todo mensaje que llegue desde esta conexion. 
+	Se han declarado variables de clase para almacenar la dirección del host y el puerto al que conectarse, y se ha creado una función \texttt{connect()}. Esta función genera un objeto WebSocket haciendo uso de los datos almacenados para abrir una conexión con el servidor, y establece una serie de \textit{Event Listeners} que manejarán todo mensaje que llegue desde esta conexion. 
 
-	\item \textbf{INDIGO.1.2  Como desarrollador, quiero enviar mensajes formato JSON al servidor a través de la conexión WS.}
+	\item \textbf{INDIGO.1.2}
 	
-	Aprovechando la conexión WebSocket creada, se añade una función 'send(message)' que permite el envió de mensajes a través del socket si este está definido. El envío es asíncrono, y la clase podrá seguir funcionando sin tener que interrumpir su ejecución en espera de una respuesta. En caso de recibir una, será captada por los 'Event Listeners' establecidos.
+	Aprovechando la conexión WebSocket creada, se añade una función \texttt{send(message)} que permite el envío de mensajes a través del socket si este está definido. El envío es asíncrono, y la clase podrá seguir funcionando sin tener que interrumpir su ejecución en espera de una respuesta. En caso de recibir una, será captada por los \textit{Event Listeners} establecidos.
 
-	\item \textbf{INDIGO.1.8  Como desarrollador, quiero solicitar información sobre una o varias Propiedades específicas asociadas a un servidor.}\\
-	\textbf{INDIGO.1.9 Como desarrollador, quiero solicitar la información de todas las Propiedades asociadas a un servidor INDI.}
+	\item \textbf{INDIGO.1.8}\\
+	\textbf{INDIGO.1.9}
 	
-	Haciendo uso de las funciones de conexión con WebSocket recién declaradas, se añade la función 'sendGetPropertiesMessage(protocolVersion, deviceName? string, propertyName?: string)'. Esta función toma como parámetros opcionales el nombre de una propiedad específica y el del dispositivo al que pertenece, y construye y envia un mensaje 'getProperties' para solicitar las propiedades según estos parámetros. Esto nos permite solicitar todas las Propiedades del Servidor, las asociadas a un Dispositivo específico, o los datos concretos de una Propiedad en particular.
+	Haciendo uso de las funciones de conexión con WebSocket recién declaradas, se añade la función \texttt{sendGetPropertiesMessage(protocolVersion, deviceName? string, propertyName?: string)}. Esta función toma como parámetros opcionales el nombre de una propiedad específica y el del dispositivo al que pertenece, y construye y envia un mensaje \texttt{getProperties} para solicitar las propiedades según estos parámetros. Esto nos permite solicitar todas las Propiedades del Servidor, las asociadas a un Dispositivo específico, o los datos concretos de una Propiedad en particular.
 
-	\item \textbf{INDIGO.1.5  Como desarrollador, quiero que se almacenen en una estructura de datos las Propiedades que se reciban a través de mensajes y que no hayan sido almacenadas previamente.}
+	\item \textbf{INDIGO.1.5}
 	
 	Para el almacenamiento  de los datos correspondientes a los diferentes tipos de propiedades que se pueden recibir a través de los mensajes, se ha diseñado una estructura de datos basada en el principio de herencia de clases en una estructura basada en programación orientada a objetos.
 
-Se ha implementado una clase genérica denominada 'Property()', con los datos principales de una propiedad como variables. A partir de esta clase genérica, se han derivado cinco clases especializadas: 'TextProperty()', 'NumberProperty()', 'SwitchProperty()', 'LightProperty()', y 'BlobProperty()', cada una correspondiente a un tipo específico de propiedad en el sistema INDIGO. Esto nos permite definir parámetros y funciones específicas para cada tipo de propiedad, eliminando redundancias en el código.
+Se ha implementado una clase genérica denominada \texttt{Property()}, con los datos principales de una propiedad como variables. A partir de esta clase genérica, se han derivado cinco clases especializadas: \texttt{TextProperty()}, \texttt{NumberProperty()}, \texttt{SwitchProperty()}, \texttt{LightProperty()}, y \texttt{BlobProperty()}, cada una correspondiente a un tipo específico de propiedad en el sistema INDIGO. Esto nos permite definir parámetros y funciones específicas para cada tipo de propiedad, eliminando redundancias en el código.
 
-Adicionalmente, se ha creado la clase 'PropertyItem()', encargada de almacenar el nombre y valor de un ítem dentro de una propiedad. Esta clase también se extiende en la subclase 'PropertyItemNumber()', utilizada específicamente en las propiedades del tipo 'NumberProperty()' y que permite registrar los valores adicionales de este tipo de ítems.
+Adicionalmente, se ha creado la clase \texttt{PropertyItem()}, encargada de almacenar el nombre y valor de un ítem dentro de una propiedad. Esta clase también se extiende en la subclase \texttt{PropertyItemNumber()}, utilizada específicamente en las propiedades del tipo \texttt{NumberProperty()} y que permite registrar los valores adicionales de este tipo de ítems.
 
-Todas las clases definidas en esta estructura poseen un constructor que permite su creación a partir de un objeto en formato JSON. Con esta estructura declarada, en cuanto se reciba un mensaje del servidor con nuevas propiedades no tenemos más que invocar el constructor correspondiente y almacenarlo en la variable de clase 'indigoPorperties[]', que actuará como contenedor para todas las propiedades gestionadas por el cliente.
+Todas las clases definidas en esta estructura poseen un constructor que permite su creación a partir de un objeto en formato JSON. Con esta estructura declarada, en cuanto se reciba un mensaje del servidor con nuevas propiedades no tenemos más que invocar el constructor correspondiente y almacenarlo en la variable de clase \texttt{indigoPorperties[]}, que actuará como contenedor para todas las propiedades gestionadas por el cliente.
 
 \end{itemize}
 
+\newpage
+
 \subsection{Pruebas}
 
-Para verificar el correcto envío y recepción de mensajes INDIGO desde JavaScript, se ha desarrollado una página HTML de prueba que permitirá crear una instancia del cliente con la que interactuar con el servidor. En esta página se han añadido una serie de botones que facilitan la prueba de las solicitudes getProperties mediante la función sendGetPropertiesMessages(). Además, se ha evaluado el almacenamiento de los datos recibidos en la estructura de datos recién implementada.
+Para verificar el correcto envío y recepción de mensajes INDIGO desde JavaScript, se ha desarrollado una página HTML de prueba que permitirá crear una instancia del cliente con la que interactuar con el servidor. En esta página se han añadido una serie de botones que facilitan la prueba de las solicitudes \texttt{getProperties} mediante la función \texttt{sendGetPropertiesMessages()}. Además, se ha evaluado el almacenamiento de los datos recibidos en la estructura de datos recién implementada.
 
 Después de realizar diversas pruebas, se ha confirmado que la conexión mediante WebSocket se establece sin inconvenientes y que el cliente es capaz de enviar y recibir mensajes con el servidor de manera efectiva.
+
+Se comentan más detalladamente las pruebas más relevantes:
+
+\begin{itemize}
+\item \textbf{Nombre de la prueba:} Conexión con el servidor a través de JavaScript.
+
+\textbf{Requisitos previos:} El servidor debe estar inicializado. El cliente crea un objeto WebSocket con la dirección del servidor y el puerto al que conectarse.
+
+\textbf{Resultado obtenido:} Tras crear el objeto WebSocket, el cliente confirma a través de la consola que se ha establecido una conexión correctamente.
+
+\item \textbf{Nombre de la prueba:} Envío de una solicitud de obtener propiedades al servidor.
+
+\textbf{Requisitos previos:} El servidor debe estar inicializado. El cliente debe haber establecido una conexión WebSocket con el cliente. El cliente envía un mensaje \texttt{getProperties([...])}.
+
+\textbf{Resultado esperado:} El servidor envía un mensaje de respuesta al cliente con los datos de las Propiedades de todos los Dispositivos conectados.
+
+\textbf{Resultado real de la prueba:} El servidor no responde a la petición recién realizada ni a ninguna otra realizada después, requiriendo ser reiniciado.
+
+\textbf{Investigación y resolución:} Tras volver a consultar la documentación, nos damos cuenta de que el envío de mensajes requiere la especificación obligatoria del número de versión del protocolo a usar. Tras añadir este dato al mensaje, se recibe la respuesta esperada.
+
+\item \textbf{Nombre de la prueba:} Almacenamiento de datos en la estructura local del cliente.
+
+\textbf{Requisitos previos:} El servidor debe estar inicializado. El cliente debe haber establecido una conexión WebSocket con el cliente. El cliente envía un mensaje \texttt{getProperties()}, y el servidor responde con un mensaje JSON con los datos de las Propiedades.
+
+\textbf{Resultado esperado:} El cliente parsea los datos JSON recibidos en un objeto. Por cada objeto recibido, se invoca al constructor de la clase \texttt{Property} y se añade al vector \texttt{indigoProperties[]}.
+ 
+\textbf{Resultado real de la prueba:} Se descubre que algunas Propiedades en particular no están siendo almacenadas. 
+
+\textbf{Investigación y resolución:} Tras varias ejecuciones, se descubre que no se están almacenando propiedades de distintos dispositivos con el mismo nombre, debido a que no se está teniendo en cuenta el parámetro \texttt{Device} de las Propiedades. Se modifica la clase para incluir este parámetro, y en el próximo sprint se implementará una nueva clase \texttt{Device()} para reflejar este aspecto mejor en la estructura.
+
+\end{itemize}
 
 \newpage
 
 \section{Fase 6 - Sprint 2}
+
+A continuación se detallan las etapas de este segundo sprint.
 
 \subsection{Análisis}
 
@@ -171,6 +246,9 @@ Las historias introducidas en el Product Backlog de este sprint son las siguient
 	\item \textbf{INDIGO.1.10 }Como desarrollador, quiero realizar cambios sobre las Propiedades almacenadas en la estructura de datos y enviar esos cambios a través de mensajes al servidor.
 	
 	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.1.12 }Como desarrollador, quiero que el State de una Propiedad (Idle, OK, Busy, Alert) se modifique automáticamente dentro de la estructura de datos al State correspondiente tras realizar modificaciones sobre dicha propiedad.
+	
+	\textbf{Prioridad:} Baja
 	\item \textbf{INDIGO.1.4 }Como desarrollador, quiero que los mensajes recibidos sean procesados correctamente en función del tipo de respuesta (almacenar cambios en las Propiedades, procesar mensajes de error, notificaciones de conexión/desconexión...).
 	
 	\textbf{Prioridad:} Alta
@@ -181,9 +259,6 @@ Las historias introducidas en el Product Backlog de este sprint son las siguient
 	
 	\textbf{Prioridad:} Media
 	\item \textbf{INDIGO.1.11 }Como desarrollador, quiero que las solicitudes de lectura o escritura de Propiedades se limiten/restrinjan en función de sus permisos (Read-only, Write-only, Read-write)
-	
-	\textbf{Prioridad:} Baja
-	\item \textbf{INDIGO.1.12 }Como desarrollador, quiero que el State de una Propiedad (Idle, OK, Busy, Alert) se modifique automáticamente dentro de la estructura de datos al State correspondiente tras realizar modificaciones sobre dicha propiedad.
 	
 	\textbf{Prioridad:} Baja
 \end{itemize}
@@ -198,8 +273,8 @@ Se ha diseñado el siguiente esquema de clase para planificar las funcionalidade
 %IMAGEN ESQUEMA ARQUITECTURA CLIENTE- Cliente JavaScript
 \begin{figure}[h]
 	\centering
-	\hspace*{-7cm}   
-	\includegraphics[scale=0.40]{img/diseño-sprint2.png}
+	\hspace*{-3cm}   
+	\includegraphics[scale=0.42]{img/diseño-sprint2.png}
 	\caption{Esquema de clase diseñado para el sprint 2.}
 \end{figure}
 
@@ -207,24 +282,272 @@ Se ha diseñado el siguiente esquema de clase para planificar las funcionalidade
 \subsection{Implementación}
 
 \begin{itemize}[leftmargin=10mm]
-	\item \textbf{INDIGO.1.10 Como desarrollador, quiero realizar cambios sobre las Propiedades almacenadas en la estructura de datos y enviar esos cambios a través de mensajes al servidor.}\\
-	\textbf{INDIGO.1.12 Como desarrollador, quiero que el State de una Propiedad (Idle, OK, Busy, Alert) se modifique automáticamente dentro de la estructura de datos al State correspondiente tras realizar modificaciones sobre dicha propiedad.}
-	Tomando como base la estructura de la función sendGetPropertiesMessages() desarrollada en el anterior sprint, se ha declarado la funcion sendChangePropertyMessage(), la cual toma como parámetros el nombre del dispositivo, el de la propiedad y uno o varios items cuyo valor modificar, organizados en un vector de Pares. La función redactará un mensaje JSON con los datos introducidos a través del Socket al servidor INDIGO.
+	\item \textbf{INDIGO.1.10}\\
+	\textbf{INDIGO.1.12}\\
+	Tomando como base la estructura de la función \texttt{sendGetPropertiesMessages()} desarrollada en el anterior sprint, se ha declarado la función \texttt{sendChangePropertyMessage()}, la cual toma como parámetros el nombre del dispositivo, el de la propiedad y uno o varios items cuyo valor modificar, organizados en un vector de Pares. La función redactará un mensaje JSON con los datos introducidos a través del Socket al servidor INDIGO.
 	
-	En caso de que el servidor acepte, implementará los datos recibidos en sus Propiedades y responderá al cliente con un mensaje 'getProperties' con los nuevos, y en caso de que no considere válidos estos cambios, enviará el mismo mensaje, reafirmando los datos no alterados al cliente. En ambos casos, el cliente recibirá una respuesta y actualizará su base local según el resultado, sin necesidad de realizar modificaciones directas sobre los datos de la estructura.
+	En caso de que el servidor acepte, implementará los datos recibidos en sus Propiedades y responderá al cliente con un mensaje \texttt{getProperties} con los nuevos, y en caso de que no considere válidos estos cambios, enviará el mismo mensaje, reafirmando los datos no alterados al cliente. En ambos casos, el cliente recibirá una respuesta y actualizará su base local según el resultado, sin necesidad de realizar modificaciones directas sobre los datos de la estructura.
 	
-	\item \textbf{INDIGO.1.4 Como desarrollador, quiero que los mensajes recibidos sean procesados correctamente en función del tipo de respuesta (almacenar cambios en las Propiedades, procesar mensajes de error, notificaciones de conexión/desconexión...).}
-	En el anterior sprint, todos los mensajes recibidos del Servidor eran tratados como un envío de propiedades, lo que podía dar lugar a errores en caso de recibir cualquier otro tipo de mensaje, como 'deleteProperty'. Se ha modificado la funcion 'connect()' para que se consulte la cabecera de los mensajes cada vez que se reciba uno, actuando según lo requiera el mensaje.
+	\item \textbf{INDIGO.1.4}\\
+	En el anterior sprint, todos los mensajes recibidos del Servidor eran tratados como un envío de propiedades, lo que podía dar lugar a errores en caso de recibir cualquier otro tipo de mensaje, como \texttt{deleteProperty}. Se ha modificado la función \texttt{connect()} para que se consulte la cabecera de los mensajes cada vez que se reciba uno, actuando según lo requiera el mensaje.
 	
-	\item \textbf{INDIGO.1.6 Como desarrollador, quiero que se actualicen automáticamente la estructura de datos de las Propiedades almacenadas al recibir mensajes con Propiedades almacenadas previamente.}
-	
-	En la anterior iteración cada vez que se recibía un mensaje con propiedades se creaba un objeto de la clase Property y sus derivadas, sin tneer en cuenta si ese objeto ya estaba registrado previamente. Para evitar la redundancia de datos se ha actualizado la función 'connect()' para que compruebe si una Propiedad ya está registrada antes de añadirla a la base local. En caso afirmativo, simplemente actualizará los valores de sus items en vez de crear una nueva.
+	\item \textbf{INDIGO.1.6}\\
+	En la anterior iteración cada vez que se recibía un mensaje con propiedades se creaba un objeto de la clase Property y sus derivadas, sin tener en cuenta si ese objeto ya estaba registrado previamente. Para evitar la redundancia de datos se ha actualizado la función \texttt{connect()} para que compruebe si una Propiedad ya está registrada antes de añadirla a la base local. En caso afirmativo, simplemente actualizará los valores de sus items en vez de crear una nueva.
 \end{itemize}
 
 
-Además, aparte de las historias de usuario implementadas, se han realizado cambios sobre la estructura de datos para representar de forma más precisa los dispositivos conectados al servidor. Se ha implementado una nueva clase 'Device()', que representará a un dispositivo y todas sus propiedades. La clase cliente tendrá acceso a un listado de dispositivos 'indigoDevices[]' en vez de acceder a un listado desorganizado de todas las propiedades. También se ha modificado la clase genérica 'property()' para incluir el resto de variables que definen a cada propiedad.
+Además, aparte de las historias de usuario implementadas, se han realizado cambios sobre la estructura de datos para representar de forma más precisa los dispositivos conectados al servidor. Se ha implementado una nueva clase \texttt{Device()}, que representará a un dispositivo y todas sus propiedades. La clase cliente tendrá acceso a un listado de dispositivos \texttt{indigoDevices[]} en vez de acceder a un listado desorganizado de todas las propiedades. También se ha modificado la clase genérica \texttt{property()} para incluir el resto de variables que definen a cada propiedad.
 
 
 \subsection{Pruebas}
 
+Haciendo uso de las funciones de solicitud de propiedades y de los diversos simuladores proporcionados por INDIGO Server, se han llevado a cabo una serie de pruebas para verificar que los datos se introducen correctamente en la nueva estructura de datos con Dispositivos.
+
+A través de estas pruebas, se comprueba que el cliente ya es capaz de interpretar adecuadamente los diferentes tipos de mensajes que el servidor puede enviar, respondiendo según los requisitos que hemos establecido.
+
+Una vez realizadas estas comprobaciones, se ha utilizado la herramienta Rollup para empaquetar todas las clases del cliente en un único archivo JavaScript. Tras verificar que todas las funcionalidades del cliente se preservan correctamente tras el empaquetado, se decide utilizar este archivo comprimido como la base para el desarrollo de la interfaz gráfica. 
+
+Se comentan más detalladamente las pruebas más relevantes:
+
+\begin{itemize}
+	\item \textbf{Nombre de la prueba:} Envío de una solicitud de modificación de Propiedad al servidor y correcta recepción de respuesta
+	
+\textbf{Requisitos previos:} El servidor debe estar inicializado. El cliente debe haber establecido una conexión WebSocket con el cliente. El cliente envía un mensaje \texttt{newSwitchVector([...])} para modificar el valor de la Propiedad \texttt{CONNECTED}.
+
+\textbf{Resultado esperado:} El servidor envía un mensaje de respuesta al cliente con los detalles de la Propiedad que se ha solicitado modificar, confirmando o denegando el cambio.
+
+\textbf{Resultado real de la prueba:} El servidor no responde a la petición recién realizada ni a ninguna otra realizada después, requiriendo ser reiniciado.
+
+\textbf{Investigación y resolución:} Tras revisar la documentación y comparar los ejemplos de mensaje dados en XML con el mensaje equivalente JSON, nos damos cuenta de que la solicitud de modificación no está siendo formulada correctamente. Al leer el mensaje JSON desde el HTML, se está enviando con el carácter incorrecto para las comillas dobles. Una vez modificada la función de \texttt{send(message)} para sanitizar los mensajes enviados y evitar esta clase de errores, el servidor responde a la petición con una confirmación.
+
+
+\item \textbf{Nombre de la prueba:} Empaquetado de la aplicación en un fichero con Rollup
+
+\textbf{Requisitos previos:} Se crea un archivo de configuración de Rollup especificando los formatos en los que exportar. Se invoca a la herramienta Rollup para comprimir las clases en un fichero. Se carga el cliente desde dicho fichero en lugar de la clase previamente establecida.
+
+\textbf{Resultado obtenido:} El cliente es importado como un módulo desde el fichero correctamente. El envío y recepción de mensajes funciona como se esperaba, sin ningún cambio en funcionalidad con respecto a los ficheros anteriores.
+\end{itemize}
+
+
+\newpage
+
+\section{Fase 7 - Sprint 3}
+
+A continuación se detallan las etapas de este sprint.
+
+\subsection{Análisis}
+
+\begin{itemize}[leftmargin=10mm]
+	\item \textbf{INDIGO.2.1 }Como usuario, quiero que la aplicación establezca una conexión con un servidor INDIGO a través de la red.
+	
+	\textbf{Prioridad:} Muy Alta
+	\item \textbf{INDIGO.2.2 }Como usuario, quiero que la aplicación haga uso de la biblioteca cliente INDIGOScript.
+	
+	\textbf{Prioridad:} Muy Alta
+	\item \textbf{INDIGO.2.3 }Como usuario, quiero que la aplicación me muestre un listado de todos los dispositivos conectados al servidor y sus propiedades.
+	
+	\textbf{Prioridad:} Muy Alta
+	\item \textbf{INDIGO.2.4 }Como usuario, quiero que los valores almacenados en la aplicación se modifiquen automáticamente al recibir nuevos datos del servidor.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.5 }Como usuario, quiero poder visualizar los elementos de una propiedad tipo Text.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.7 }Como usuario, quiero poder visualizar los elementos de una propiedad tipo Number.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.9 }Como usuario, quiero poder visualizar los elementos de una propiedad tipo Switch.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.11 }Como usuario, quiero poder visualizar los elementos de una propiedad tipo Light.
+	
+	\textbf{Prioridad:} Media
+	\item \textbf{INDIGO.2.12 }Como usuario, quiero poder visualizar los elementos de una propiedad tipo BLOB.
+	
+	\textbf{Prioridad:} Media
+\end{itemize}
+
+Durante la tercera iteración, el desarrollo se centrará en la implementación de una clase JavaScript destinada a gestionar la interfaz gráfica de la aplicación, haciendo uso de la biblioteca del cliente previamente desarrollada. Esta nueva clase deberá ser capaz de inyectar elementos del DOM en el navegador web, a través de los cuales el usuario podrá acceder a todas las funcionales del cliente de manera intuitiva.
+
+\subsection{Diseño}
+
+Se ha diseñado el siguiente esquema de clase para planificar la clase de la interfaz web. Se simplifican las clases que componen el cliente INDIGO en un único fichero para mayor legibilidad:
+
+%IMAGEN ESQUEMA ARQUITECTURA CLIENTE- Cliente JavaScript
+\begin{figure}[h]
+	\centering
+	\hspace*{-2cm}   
+	\includegraphics[scale=0.52]{img/diseño-sprint3.png}
+	\caption{Esquema de clase diseñado para el sprint 3.}
+\end{figure}
+
+
+
+\subsection{Implementación}
+
+\begin{itemize}[leftmargin=10mm]
+	\item \textbf{INDIGO.2.1}
+	
+	Haciendo uso de la biblioteca de cliente, se ha declarado una variable \texttt{indigoClient} en la nueva clase. Esta variable será inicializada junto con la clase de interfaz gráfica a través de la función \texttt{setupClient()}, y permitirá acceder a todas las funcionalidades y datos del cliente en todo momento.
+	Se plantea la necesidad de establecer un sistema para que el cliente pueda notificar los cambios entrantes a la interfaz gráfica y a otras clases que observen.
+	
+	\item \textbf{INDIGO.2.3}
+	
+	Hemos implementado una serie de funciones para hacer posible la implementación de una interfaz gráfica en cualquier página web. Se han creado las funciones \texttt{createBaseTable()}, \texttt{createDevice()}, \texttt{createPropertyDOM()} y \texttt{createPropertyItemDOM()}, que permitirán la creación programática de elementos de DOM para insertar en nuestra interfaz gráfica. En estos elementos se mostrará al usuario los valores de las propiedades.
+	
+	\item \textbf{INDIGO.2.5}\\
+	\textbf{INDIGO.2.7}\\
+	\textbf{INDIGO.2.9}\\
+	\textbf{INDIGO.2.11}\\
+	\textbf{INDIGO.2.12}\\
+	Tomando como base las funciones de creación de DOM anteriormente propuestas, en particular la función \texttt{createPropertyItemDOM()}, se han creado funciones específicas para la creación programática de estos elementos, junto con sus valores.
+	
+	
+	\item \textbf{INDIGO.2.4}
+	
+	 Para que sea posible recibir actualizaciones del estado del cliente, el cliente debe estar al tanto de las aplicaciones que lo están monitorizando. Esto se ha logrado haciendo uso de del patrón de diseño Observador. 
+	 
+	 Se ha definido en el cliente una lista de observadores, denominada \texttt{Observers[]}, en la cual se irá introduciendo referencias a todas las aplicaciones que desean subscribirse a los eventos del cliente. Cada vez que se reciban novedades de cambios en los dispositivos del servidor, el cliente invocará la función \texttt{notifyChange(indigoData)} en cada uno de los observadores, enviándoles una copia de los datos recibidos. De esta manera, la interfaz gráfica del usuario será notificada cada vez que se produzca un cambio en el cliente, lo que permitirá actualizar los valores mostrados en tiempo real.
+	
+\end{itemize}
+
+\subsection{Pruebas}
+
+Con las funcionalidades que se han implementado en esta iteración, ya se puede imprimir una versión un tanto primitiva de nuestra interfaz gráfica, que mostrará los datos del cliente y sus modificaciones en tiempo real. 
+
+Se comentan más detalladamente las pruebas más relevantes:
+
+\begin{itemize}
+	\item \textbf{Nombre de la prueba:} Lectura automática de los datos del cliente desde la interfaz
+	
+\textbf{Requisitos previos:} El servidor debe estar inicializado. El cliente debe estar inicializado y poseer datos en su estructura. 
+
+\textbf{Resultado esperado:} La interfaz lee los datos de la estructura local del cliente, y los imprime por pantalla cada vez que son actualizados en el cliente.
+
+\textbf{Resultado real de la prueba:} La interfaz es capaz de leer los datos de la estructura, pero no se actualizan automáticamente, solo cuando se invoca expresamente la función en cuestión.
+
+\textbf{Investigación y resolución:} Tras estudiar detenidamente la estructura de clases planteadas, se concluye que es necesaria la implementación del patrón Observador descrita en la implementación del requisito \textbf{INDIGO.2.4}. Tras implementar este sistema, el cliente es capaz de notificar de los cambios a la interfaz automáticamente.
+
+\end{itemize}
+
+
+\newpage
+
+\section{Fase 8 - Sprint 4}
+
+A continuación se detallan las etapas de este sprint.
+
+\subsection{Análisis}
+
+\begin{itemize}[leftmargin=10mm]
+	\item \textbf{INDIGO.2.6 }Como usuario, quiero poder modificar los valores de una propiedad tipo Text.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.8 }Como usuario, quiero poder modificar los valores de una propiedad tipo Number.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.10 }Como usuario, quiero poder modificar los valores de una propiedad tipo Switch.
+	
+	\textbf{Prioridad:} Alta
+	\item \textbf{INDIGO.2.13 }Como usuario, quiero que el acceso y modificación de los valores estén restringidos en función de sus permisos y estado.
+	
+	\textbf{Prioridad:} Baja
+	\item \textbf{INDIGO.2.14 }Como usuario, quiero que las propiedades se eliminen automáticamente del cliente al ser eliminadas del servidor.
+	
+	\textbf{Prioridad:} Baja
+	\item \textbf{INDIGO.2.15 }Como usuario, quiero poder programar cambios en los valores de las propiedades para que se ejecuten a horas especificas.
+	
+	\textbf{Prioridad:} Muy Baja
+	\item \textbf{INDIGO.2.16 }Como usuario, quiero poder visualizar una lista de los cambios e instrucciones programados.
+	
+	\textbf{Prioridad:} Muy Baja
+\end{itemize}
+
+La ultima iteración se destinará a implementar las últimas funcionalidades de la interfaz gráfica, la más importante de ellas la capacidad de modificar dispositivos y propiedades desde la interfaz. Se refinarán también lo implementado en previas iteraciones. Es posible que haya que que descartar algunas historias de usuario por falta de tiempo para desarrollarlas, en cuyo caso se escogerán en función de la prioridad establecida.
+
+\newpage
+
+\subsection{Diseño}
+
+Se ha diseñado el siguiente esquema de clase para planificar la aplicación web de cara a esta iteración:
+%IMAGEN ESQUEMA ARQUITECTURA CLIENTE- Cliente JavaScript
+\begin{figure}[h]
+	\centering
+	\hspace*{-2cm}   
+	\includegraphics[scale=0.52]{img/diseño-sprint4.png}
+	\caption{Esquema de clase diseñado para el sprint 4.}
+\end{figure}
+
+\newpage
+
+\subsection{Implementación}
+
+\begin{itemize}[leftmargin=10mm]
+	\item \textbf{INDIGO.2.6}\\
+	\textbf{INDIGO.2.8}\\
+	\textbf{INDIGO.2.10}\\
+	Se han alterado la funciones de creación de elementos DOM de propiedades para que los valores de cada propiedad se muestren en un elemento DOM \textit{input}, modificable y sencillo. También se han añadido botones con los que confirmar los cambios, y se ha cambiado la manera en la que se representan las propiedades Switch, optando por botones conmutables que actúan como un elemento \textit{input} checkbox.
+	
+	En el código, se han declarado las nuevas funciones \texttt{updateTextProperty()} y \texttt{updateSwitchProperty()}, las cuales al ser invocadas recopilarán los datos del DOM para transmitírselos al cliente.
+	
+	\item \textbf{INDIGO.2.13}
+	
+	Las funciones de actualización de propiedades planteadas en la anterior historia tienen en cuenta las variables \textit{Permission} y \textit{State} de las propiedades, y limitan la modificación de sus valores según.
+	
+	\item \textbf{INDIGO.2.14}
+	
+	El listado de propiedades cargadas en el DOM es revisado cada vez que se produce un cambio en el cliente y este notifica a la interfaz gráfica, garantizando que las propiedades eliminadas se retiren en el momento y que los datos sean siempre los más recientes posibles.
+	
+\end{itemize}
+
+Gran parte del tiempo de implementación se ha destinado a revisar y optimizar el código ya implementado en anteriores sprints para garantizar su correcto funcionamiento y 
+
+Debido a fallos durante su implementación y a la falta de tiempo en este sprint, no se ha podido completar todas las tareas propuestas, quedando pendiente las historias \textbf{INDIGO.2.15} y \textbf{INDIGO.2.16}. 
+
+\subsection{Pruebas}
+
+
+\begin{itemize}
+	\item \textbf{Nombre de la prueba:} Modificación de propiedad del tipo Switch desde interfaz gráfica
+	
+\textbf{Requisitos previos:} El servidor debe estar inicializado. El cliente y la interfaz gráfica deben estar inicializados. Se envía una petición de modificación desde la interfaz de una propiedad Switch con permisos de escritura.
+
+\textbf{Resultado esperado:} El servidor recibe y procesa la petición, y envía una respuesta al cliente. Esta respuesta queda reflejada en la interfaz inmediatamente.
+
+\textbf{Resultado real de la prueba:} El servidor no responde a la petición recién realizada. No se perciben cambios en la interfaz.
+
+\textbf{Investigación y resolución:} Tras comparar el envío de propiedades Switch con el resto de propiedades, que sí funcionan correctamente, se descubre que al utilizar un tipo de \textit{Input} distinto al resto de propiedades, el contenido de estas no se está leyendo y procesando correctamente. Se cambian los elementos DOM utilizados para representar visualmente este tipo de dato, y se modifica la función \texttt{updateSwitchProperty()} para una correcta lectura de estos elementos. Tras estos cambios, el servidor responde correctamente a las solicitudes.
+
+\end{itemize}
+
+
+
+\newpage
+
+\section{Despliegue}
+
+A continuación se muestran una serie de capturas de la aplicación final en funcionamiento:
+
+\begin{figure}[h]
+	\centering
+	\hspace*{-4cm}   
+	\includegraphics[scale=0.4]{img/despliegue1.png}
+	\caption{Ejemplo de ejecución de INDIGOScript con un simulador CCD.}
+\end{figure}
+
+
+\begin{figure}[h]
+	\centering
+	\hspace*{-2.8cm}   
+	\includegraphics[scale=0.40]{img/despliegue2.png}
+	\caption{Ejemplo de uso de propiedad Switch para encender un dispositivo.}
+\end{figure}
+
+
+\begin{figure}[h]
+	\centering
+	\hspace*{-4cm}   
+	\includegraphics[scale=0.4]{img/despliegue3.png}
+	\caption{Ejemplo de mensaje de apagado siendo recibido en el servidor INDIGO.}
+\end{figure}
 
