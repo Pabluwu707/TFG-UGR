@@ -1,10 +1,29 @@
 \chapter{Conclusiones}
 
-\section{Conclusiones y aspectos a mejorar}
+\section{Trabajos futuros}
+
+La metodología planteada para este proyecto permite el añadido de nuevas iteraciones y fases de desarrollo. A continuación se exploran \textbf{posibles ideas} que se podrían expandir en caso de elegir continuar el desarrollo del proyecto en un futuro.
+
+\subsection{Implementación de las funcionalidades por terminar}
+
+Como se ha comentado en la sección de implementación del último sprint, no se pudieron completar alguno de los requisitos propuestos durante la planificación del proyecto. En particular, \textbf{queda pendiente la implementación de un sistema de programado de instrucciones} para automatizar el proceso de modificar propiedades. Esta idea se podría expandir e implementar en su propio sprint.
+
+\subsection{Creación de vistas alternativas para la interfaz}
+
+Una de las características de los clientes con interfaz gráfica como KStars o INDIGO Control Panel es la presencia de diferentes vistas con las que hacer enfoque en diferentes sets de propiedades.
+
+La estructura por elemento de DOM de la interfaz gráfica de nuestra aplicación permite que estos sean mostrados y ocultados fácilmente. Futuras iteraciones del proyecto se podrían destinar a aprovechar este sistema para crear \textbf{vistas alternativas}, o para crear un sistema que permite al usuario configurar y customizar sus propias vistas.
+
+\subsection{Gestión de usuarios y servidores}
+
+Otra funcionalidad propuesta durante el planteamiento inicial y que no se llegó a explorar fue la gestión del servidor al que conectarse a través de una interfaz de \textit{login}, para poder escoger el servidor INDIGO de manera dinámica. 
+
+
+\section{Conclusión}
 
 Uno de los mayores desafíos de este proyecto fue la familiarización con el protocolo de comunicación INDIGO, la gestión de Propiedades de dispositivos astronómicos, y el envío y recepción de mensajes, sobre todo al no poseer conocimientos previos sobre el campo de la astronomía o la astrofotografía. En ese aspecto, se puede afirmar que el trabajo realizado ha sido exitoso. Se ha logrado desarrollar un cliente completamente funcional y reutilizable, ajustado a los requisitos inicialmente planeados, con una estructura de datos claramente definida, y con alta disponibilidad. 
 
-El uso de Roll-up como herramienta de empaquetado para optimizar el código también ha aportado bastante al cliente, permitiendo comprimirlo de forma eficiente y exportarlo a distintos estándares para una disponibilidad aún mayor. Por lo general, las herramientas seleccionadas para el desarrollo del proyecto han demostrado ser más que adecuadas, satisfaciendo las expectativas y proporcionando un entorno de trabajo ligero, flexible y cómodo. De entre todas ellas destaca TypeScript, que como lenguaje nos ha dado herramientas como el tipado estático que han permitido crear un cliente mucho más robusto y un código mucho más legible y fácil de interpretar.
+El uso de Rollup como herramienta de empaquetado para optimizar el código también ha aportado bastante al cliente, permitiendo comprimirlo de forma eficiente y exportarlo a distintos estándares para una disponibilidad aún mayor. Por lo general, las herramientas seleccionadas para el desarrollo del proyecto han demostrado ser más que adecuadas, satisfaciendo las expectativas y proporcionando un entorno de trabajo ligero, flexible y cómodo. De entre todas ellas destaca TypeScript, que como lenguaje nos ha dado herramientas como el tipado estático que han permitido crear un cliente mucho más robusto y un código mucho más legible y fácil de interpretar.
 
 Otro aspecto exitoso de este proyecto fue la elección de la metodología. Optar por una metodología personalizada permitió aprovechar las mejores prácticas y herramientas de los métodos ágiles más populares, adaptando la planificación del proyecto a las necesidades específicas del problema desde el inicio.
 
